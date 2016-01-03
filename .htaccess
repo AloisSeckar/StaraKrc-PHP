@@ -2,12 +2,9 @@
 # to create new subdomain, create a folder www/subdom/(subdomain name)
 # to create web for alias, create a folder www/domains/(whole domain name)
 
-# htaccess pravidla pro subdomeny a samostatne weby aliasu
-# pro vytvoreni subdomeny vytvorte adresar www/subdom/(nazev subdomeny)
-# pro vytvoreni webu pro alias vytvorte adresar www/domains/(cely domenovy nazev)
-# dalsi info a priklady: http://kb.wedos.com/r/32/webhosting-htaccess.html
-
 RewriteEngine On
+
+# od Wedos
 
 # cele domeny (aliasy)
 RewriteCond %{REQUEST_URI} !^domains/
@@ -30,3 +27,24 @@ RewriteRule ^domains/[^/]+/(.+[^/])$ /$1/ [R]
 # subdomeny - spravne presmerovani pri chybejicim /
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^subdom/[^/]+/(.+[^/])$ /$1/ [R]
+
+
+# od Alois Seckar
+
+# "hezke" url
+# src: http://mike.treba.cz/mod_rewrite-a-hezke-url-dil-iv/
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?page=$1 
+
+# presmerovani clanku
+RewriteCond %{QUERY_STRING} ^page=articles&aid=([\d]+) [NC]
+RewriteRule ^index\.php$ http://krc-historie.cz/articles/%1? [R=301,NC,L,R]
+
+# presmerovani galerie
+RewriteCond %{QUERY_STRING} ^page=gallery&gid=([\d]+) [NC]
+RewriteRule ^index\.php$ http://krc-historie.cz/gallery/g/%1? [R=301,NC,L,R]
+
+# presmerovani obrazku
+RewriteCond %{QUERY_STRING} ^page=gallery&iid=([\d]+) [NC]
+RewriteRule ^index\.php$ http://krc-historie.cz/gallery/i/%1? [R=301,NC,L,R]
