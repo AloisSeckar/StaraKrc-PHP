@@ -55,7 +55,7 @@ class ELRHPageContentRenderer {
 						} else {
 							$size_restriction = "";
 						}
-						echo '<a href="/content/gallery/'.$page_data["entry"]["image"].'" title="'.$page_data["texts"]["gallery_full"].'" target="_blank"><img src="/content/gallery/'.$page_data["entry"]["image"].'" alt="'.$page_data["entry"]["name"].'" '.$size_restriction.' /></a>'.PHP_EOL;
+						echo '<a href="/content/gallery/'.$page_data["entry"]["image"].'" title="'.$page_data["texts"]["gallery_full"].'" target="_blank"><img class="boxed" src="/content/gallery/'.$page_data["entry"]["image"].'" alt="'.$page_data["entry"]["name"].'" '.$size_restriction.' /></a>'.PHP_EOL;
 					echo '</td></tr>'.PHP_EOL;
 					// bottom navbox
 					echo '<tr><td>'.$navbox.'</td></tr>'.PHP_EOL;

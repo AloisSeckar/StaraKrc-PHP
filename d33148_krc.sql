@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: wm27.wedos.net:3306
--- Generation Time: Jan 03, 2016 at 01:22 AM
+-- Generation Time: Jan 03, 2016 at 04:57 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.23
 
@@ -150,8 +150,8 @@ CREATE TABLE IF NOT EXISTS `elrh_contacts` (
 --
 
 INSERT INTO `elrh_contacts` (`contact`, `name`, `link`) VALUES
-('mail', 'Alois Sečkár', 'seckar@svobodni.cz'),
-('mail', 'Anton Sečkár', 'rakcesa@seznam.cz'),
+('mail', 'Alois Sečkár', 'mailto:seckar@svobodni.cz'),
+('mail', 'Anton Sečkár', 'mailto:rakcesa@seznam.cz'),
 ('fb', 'Stará Krč', 'http://www.facebook.com/StaraKrc'),
 ('post', 'Matek 338/5, 14000 Praha 4', '');
 
@@ -1098,27 +1098,33 @@ CREATE TABLE IF NOT EXISTS `elrh_map` (
   `id` int(3) NOT NULL,
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_czech_ci DEFAULT NULL,
   `gallery` int(5) NOT NULL,
-  `top` int(3) NOT NULL,
-  `left` int(3) NOT NULL,
+  `coord_x` int(3) NOT NULL,
+  `coord_y` int(3) NOT NULL,
   `size` int(3) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin2 COLLATE=latin2_czech_cs;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin2 COLLATE=latin2_czech_cs;
 
 --
 -- Dumping data for table `elrh_map`
 --
 
-INSERT INTO `elrh_map` (`id`, `name`, `gallery`, `top`, `left`, `size`) VALUES
-(1, 'Lesní­ divadlo', 5, 460, 40, 85),
-(2, 'Sokol Krč', 9, 100, 250, 45),
-(3, 'Krčský pivovar', 23, 105, 325, 70),
-(4, 'Kaplička', 25, 195, 95, 40),
-(5, 'Masarykovy domovy', 6, 310, 380, 125),
-(6, 'Sanatorium dr. Šimsy', 8, 365, 95, 60),
-(7, 'Welzův zámek', 10, 170, 210, 50),
-(8, 'Dívčí zahradnická škola', 26, 295, 295, 40),
-(9, 'Restaurace U Labutě', 7, 248, 375, 40),
-(10, 'Restaurace Hájovna', 24, 215, 495, 40),
-(11, 'Nádraží', 22, 190, 290, 40);
+INSERT INTO `elrh_map` (`id`, `name`, `gallery`, `coord_x`, `coord_y`, `size`) VALUES
+(1, 'Lesní­ divadlo', 5, 90, 730, 70),
+(2, 'Sokol Krč', 9, 340, 240, 40),
+(3, 'Krčský pivovar', 23, 445, 250, 80),
+(4, 'Kaplička', 25, 107, 337, 40),
+(5, 'Masarykovy domovy', 6, 525, 540, 170),
+(6, 'Sanatorium dr. Šimsy', 8, 170, 530, 70),
+(7, 'Welzův zámek', 10, 255, 345, 70),
+(8, 'Dívčí zahradnická škola', 26, 390, 510, 40),
+(9, 'Restaurace U Labutě', 7, 510, 435, 45),
+(10, 'Restaurace Hájovna', 24, 672, 407, 40),
+(11, 'Nádraží', 22, 390, 355, 45),
+(12, 'Hotel Slunce', 38, 390, 400, 45),
+(13, 'Dům Školských sester de Notre Dame', 72, 505, 198, 45),
+(14, 'Klárův ústav', 83, 515, 735, 60),
+(15, 'Hotel Klimeš', 36, 130, 375, 45),
+(16, 'Škola', 37, 275, 285, 40),
+(17, 'Krčská vodárna', 94, 195, 112, 50);
 
 -- --------------------------------------------------------
 
@@ -1209,7 +1215,7 @@ CREATE TABLE IF NOT EXISTS `elrh_texts` (
   `lang` varchar(2) COLLATE utf8_czech_ci NOT NULL,
   `var` varchar(25) COLLATE utf8_czech_ci NOT NULL,
   `value` text COLLATE utf8_czech_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 --
 -- Dumping data for table `elrh_texts`
@@ -1315,7 +1321,10 @@ INSERT INTO `elrh_texts` (`id`, `lang`, `var`, `value`) VALUES
 (98, 'cz', 'gallery_full', 'Zobrazit plnou velikost (v novém okně)'),
 (99, 'cz', 'global_image_prev', 'Předchozí'),
 (100, 'cz', 'global_image_next', 'Následující'),
-(101, 'cz', 'global_image_gallery', 'Galerie');
+(101, 'cz', 'global_image_gallery', 'Galerie'),
+(102, 'cz', 'interactive_headline', 'Interaktivní mapa Krče'),
+(103, 'cz', 'interactive_info', 'Zde vidíte starou mapu Krče. Po najetí myší nad aktivní oblast se kliknutím dostanete na příslušnou galerii:'),
+(104, 'cz', 'global_interactive_map', 'Interaktivní mapa Krče');
 
 -- --------------------------------------------------------
 
@@ -1475,7 +1484,7 @@ ALTER TABLE `elrh_links_cat`
 -- AUTO_INCREMENT for table `elrh_map`
 --
 ALTER TABLE `elrh_map`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `elrh_news`
 --
@@ -1485,7 +1494,7 @@ ALTER TABLE `elrh_news`
 -- AUTO_INCREMENT for table `elrh_texts`
 --
 ALTER TABLE `elrh_texts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=106;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

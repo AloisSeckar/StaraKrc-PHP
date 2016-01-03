@@ -194,6 +194,7 @@ img { margin: 0px; padding: 0px; border: none; }
 }
 
 #banner p {
+	text-align: center;
 	clear: both;
 	padding: 0 0px;
 	font-size:18px;
@@ -284,7 +285,7 @@ img { margin: 0px; padding: 0px; border: none; }
 	background: url(../images/header_bg.jpg) left bottom no-repeat;	
 }
 
-#main_column p {
+p {
 	text-align: justify;
 	margin-bottom: 10px;
 }
@@ -447,7 +448,22 @@ p.red-note {
   padding-top: 10px;
 }
 
+/* global link to interactive map */
+p.interactive-map {
+  text-align: center;
+  margin: 0px auto;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 img.boxed { 
 	border: 1px solid black;
 	margin: 10px;
+}
+
+/* http://stackoverflow.com/a/12667751/3204544 */
+canvas {
+    pointer-events: none;       /* make the canvas transparent to the mouse - needed since canvas is position infront of image */
+    position: absolute;
 }
