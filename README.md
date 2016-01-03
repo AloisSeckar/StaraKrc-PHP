@@ -5,6 +5,6 @@ These are the source codes for http://krc-historie.cz/
 
 This repository DOESN'T contain images included in the live website.
 
-This is the latest available version of the source code. Major updates are planned for the website.
+This is the latest available version of the source code. Major update was introduced on 3rd January 2016. Further development is planned.
 
-Alois Seckar 2015-12-08
+Alois Seckar 2016-01-03
