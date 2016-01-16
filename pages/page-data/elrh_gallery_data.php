@@ -7,13 +7,13 @@ class ELRHPageData {
 			// notify content renderer, there will be index of galleries
 			$data["display"] = "index";
 				// try to load galleries
-			$data["galleries"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, dscr, images FROM elrh_gallery_galleries WHERE parent='0' ORDER BY name");
+			$data["galleries"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, dscr, (SELECT count(*) FROM elrh_gallery_images i WHERE i.gallery=g.id) AS images FROM elrh_gallery_galleries g WHERE parent='0' ORDER BY name");
 			// for each gallery load further info
 			foreach($data["galleries"] as $gallery) {
 				// first 7 images to feature
 				$data[$gallery["name"]]["images"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, image FROM elrh_gallery_images WHERE gallery='".$gallery["id"]."' ORDER BY ord LIMIT 7");
 				// related galleries
-				$data[$gallery["name"]]["galleries"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, images FROM elrh_gallery_galleries WHERE parent='".$gallery["id"]."' ORDER BY name");
+				$data[$gallery["name"]]["galleries"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, (SELECT count(*) FROM elrh_gallery_images i WHERE i.gallery=g.id) AS images FROM elrh_gallery_galleries g WHERE parent='".$gallery["id"]."' ORDER BY name");
 				// related articles
 				$data[$gallery["name"]]["articles"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT a.id, a.name, u.u_displayed_name AS author_name FROM elrh_articles a JOIN elrh_users u ON a.author=u.u_name WHERE gallery='".$gallery["id"]."' ORDER BY name");
 			}
@@ -26,14 +26,14 @@ class ELRHPageData {
 				// notify content renderer, there will be detail of particular gallery
 				$data["display"] = "gallery";
 				// try to load gallery details
-				$data["entry"] = ELRHDataExtractor::retrieveRow($mysqli, "SELECT g.id AS gid, g.parent AS pid, g.created, g.name, g.dscr, g.images, u.u_displayed_name AS author_name FROM elrh_gallery_galleries g JOIN elrh_users u ON g.author=u.u_name WHERE g.id='".mysqli_real_escape_string($mysqli, $request[1])."'");
+				$data["entry"] = ELRHDataExtractor::retrieveRow($mysqli, "SELECT g.id AS gid, g.parent AS pid, g.created, g.name, g.dscr, (SELECT count(*) FROM elrh_gallery_images i WHERE i.gallery=g.id) AS images, u.u_displayed_name AS author_name FROM elrh_gallery_galleries g JOIN elrh_users u ON g.author=u.u_name WHERE g.id='".mysqli_real_escape_string($mysqli, $request[1])."'");
 				if (!empty($data["entry"])) {
 					// images to display
 					$data["images"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, image FROM elrh_gallery_images WHERE gallery='".$data["entry"]["gid"]."' ORDER BY ord");
 					// possible parent gallery
 					$data["parent"] = ELRHDataExtractor::retrieveRow($mysqli, "SELECT id, name FROM elrh_gallery_galleries WHERE id='".$data["entry"]["pid"]."'");
 					// related galleries
-					$data["galleries"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, images FROM elrh_gallery_galleries WHERE parent='".$data["entry"]["gid"]."' ORDER BY name");
+					$data["galleries"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, (SELECT count(*) FROM elrh_gallery_images i WHERE i.gallery=g.id) AS images FROM elrh_gallery_galleries g WHERE parent='".$data["entry"]["gid"]."' ORDER BY name");
 					// related articles
 					$data["articles"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT a.id, a.name, u.u_displayed_name AS author_name FROM elrh_articles a JOIN elrh_users u ON a.author=u.u_name WHERE gallery='".$data["entry"]["gid"]."' ORDER BY name");
 					// page title adjustment
