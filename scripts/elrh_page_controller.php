@@ -61,6 +61,10 @@ class ELRHPageController {
 				// get language variables for given page
 				include_once getcwd().'/scripts/data-helpers/elrh_text_retriever.php';
 				$this->page_data["texts"] = ELRHTextRetriever::getTextsForPage($this->mysqli, $this->page_data["lang"], $this->page_request);
+				// for admin requests we need special "output" text variable
+				if (!empty($this->page_data["admin_output"])) {
+					$this->page_data["texts"]["admin_output"] = ELRHTextRetriever::getText($this->mysqli, $this->page_data["lang"], $this->page_data["admin_output"]);
+				}
 			} else {
 				// get global site title
 				include_once getcwd().'/scripts/data-helpers/elrh_db_extractor.php';
@@ -108,8 +112,8 @@ class ELRHPageController {
 				// menu is before header in black beat css
 				ELRHPageRenderer::renderPageMenu($this->page_data["menu"]["top"]); 
 				ELRHPageRenderer::renderPageHeader($this->page_data["texts"]["global_site_title"], $this->page_data["texts"]["global_site_motto"]);
-				//
-				ELRHPageRenderer::renderContentStart();
+				// content itself
+				ELRHPageRenderer::renderContentStart($this->page_data["texts"]["global_login"], $this->page_data["texts"]["global_admin"], $this->page_data["texts"]["global_logout"]);
 					if ($this->page_data["mysql"] == true) {
 						if ($this->page_request != "error") {
 							// mysql works and page exists
@@ -126,6 +130,7 @@ class ELRHPageController {
 						ELRHPageContentRenderer::renderContent();
 					}
 				ELRHPageRenderer::renderContentEnd($this->page_data["nav"], $this->page_data["settings"]["toplist_id"]);
+				// footer
 				ELRHPageRenderer::renderPageFooter($this->page_data["settings"]["global_title"], $this->page_data["menu"]["bottom"], $this->page_data["settings"]["ads_left"], $this->page_data["settings"]["ads_right"]);
 		ELRHPageRenderer::renderHTMLEnd();
 	}

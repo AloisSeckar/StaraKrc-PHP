@@ -414,6 +414,11 @@ table {
 	width: 95%;
 }
 
+table.admin {
+	width: 1px;
+	margin: 0px;
+}
+
 td, th {
 	text-align: center;
 	vertical-align: middle;
@@ -433,8 +438,29 @@ td.justify {
 	text-align: justify;
 }
 
+td.label {
+	font-weight: bold;
+	white-space: nowrap;
+	padding: 5px;
+	text-align: right;
+}
+
+td.value {
+	text-align: left;
+	padding: 5px;
+	white-space: nowrap;
+}
+
 /* end of tables */
 
+/* forms */
+form {
+	border: 1px solid black;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+/* paragraphs */
 p.centered {
   text-align: center;
   margin: 0px auto;
@@ -456,6 +482,23 @@ p.interactive-map {
   font-weight: bold;
   margin-top: 10px;
 }
+
+/* admin messages */
+div.admin_ok {
+	color: #FFFFCC;
+	background-color: #009933;
+	width: 100%;
+	text-align: center;
+	margin: 10px 0;
+}
+div.admin_error {
+	color: #FFFFCC;
+	background-color: #CC0000;
+	width: 100%;
+	text-align: center;
+	margin: 10px 0;
+}
+/* admin messages */
 
 img.boxed { 
 	border: 1px solid black;

@@ -50,9 +50,15 @@ class ELRHPageRenderer {
 		echo '</nav>'.PHP_EOL;
 	}
 	
-	public static function renderContentStart() {
+	public static function renderContentStart($login_text, $admin_text, $logout_text) {
 		echo '<div id="content">'.PHP_EOL;
 	    echo '<div id="main_column">'.PHP_EOL;
+		// show login name (if any)
+		if (isset($_SESSION["user"])) {
+			echo '<p class="centered">'.PHP_EOL;
+				echo $login_text.': <strong>'.$_SESSION["user_name"].'</strong> [<a href="/admin">'.$admin_text.'</a>] [<a href="/admin/logout">'.$logout_text.'</a>]'.PHP_EOL;
+			echo '</p>'.PHP_EOL;
+		}
 		echo '<article>'.PHP_EOL;
 	}
 	
