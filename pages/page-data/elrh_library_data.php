@@ -7,8 +7,10 @@ class ELRHPageData {
 		// find all categories
 		$data["books_cats"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name FROM elrh_books_cat ORDER BY ord");
 	    // find books for each category
-	    foreach($data["books_cats"] as $cat) {
-			$data["books"][$cat["name"]] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT name, writer, year, dscr, url, thumb, review, review_ext FROM elrh_books WHERE cat='".$cat["id"]."' ORDER BY ord");
+		if (!empty($data["books_cats"])) {
+			foreach($data["books_cats"] as $cat) {
+				$data["books"][$cat["name"]] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT name, writer, year, dscr, url, thumb, review, review_ext FROM elrh_books WHERE cat='".$cat["id"]."' ORDER BY ord");
+			}
 		}
 		
 		// save prepared data for renderer

@@ -8,6 +8,7 @@ class ELRHPageContentRenderer {
 		echo '</p>'.PHP_EOL;
 		// list of available contacts
 		echo '<table>'.PHP_EOL;
+		if (!empty($page_data["contacts"])) {
 			foreach($page_data["contacts"] as $contact) {
 				echo '<tr>'.PHP_EOL;
 				    // contact type - icon
@@ -20,6 +21,7 @@ class ELRHPageContentRenderer {
 					}
 				echo '</tr>'.PHP_EOL;
 			}
+		}
 		echo '</table>'.PHP_EOL;
 		// additional ways of contact / additional message
 		echo '<p>'.PHP_EOL;

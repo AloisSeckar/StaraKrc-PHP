@@ -14,15 +14,17 @@ class ELRHPageContentRenderer {
 			echo '<th>'.$page_data["texts"]["index_news_date"].'</th>'.PHP_EOL;
 			echo '<th class="left">'.$page_data["texts"]["index_news_item"].'</th>'.PHP_EOL;
 		echo '</tr>'.PHP_EOL;
-		foreach ($page_data["news"] as $row) {
-			echo '<tr>'.PHP_EOL;
-				echo '<td>'.PHP_EOL;
-					echo '<strong>'.$row["date"].'</strong>'.PHP_EOL;
-				echo '</td>'.PHP_EOL;
-				echo '<td class="left">'.PHP_EOL;
-					echo $row["content"].' <em>('.$row["author"].')</em>'.PHP_EOL;
-				echo '</td>'.PHP_EOL;
-			echo '</tr>'.PHP_EOL;
+		if (!empty($page_data["news"])) {
+			foreach ($page_data["news"] as $row) {
+				echo '<tr>'.PHP_EOL;
+					echo '<td>'.PHP_EOL;
+						echo '<strong>'.$row["date"].'</strong>'.PHP_EOL;
+					echo '</td>'.PHP_EOL;
+					echo '<td class="left">'.PHP_EOL;
+						echo $row["content"].' <em>('.$row["author"].')</em>'.PHP_EOL;
+					echo '</td>'.PHP_EOL;
+				echo '</tr>'.PHP_EOL;
+			}
 		}
 		echo '</table>'.PHP_EOL;
 		echo '<p>'.PHP_EOL;

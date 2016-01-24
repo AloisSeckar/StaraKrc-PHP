@@ -9,13 +9,15 @@ class ELRHPageData {
 				// try to load galleries
 			$data["galleries"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, dscr, (SELECT count(*) FROM elrh_gallery_images i WHERE i.gallery=g.id) AS images FROM elrh_gallery_galleries g WHERE parent='0' ORDER BY name");
 			// for each gallery load further info
-			foreach($data["galleries"] as $gallery) {
-				// first 7 images to feature
-				$data[$gallery["name"]]["images"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, image FROM elrh_gallery_images WHERE gallery='".$gallery["id"]."' ORDER BY ord LIMIT 7");
-				// related galleries
-				$data[$gallery["name"]]["galleries"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, (SELECT count(*) FROM elrh_gallery_images i WHERE i.gallery=g.id) AS images FROM elrh_gallery_galleries g WHERE parent='".$gallery["id"]."' ORDER BY name");
-				// related articles
-				$data[$gallery["name"]]["articles"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT a.id, a.name, u.u_displayed_name AS author_name FROM elrh_articles a JOIN elrh_users u ON a.author=u.u_name WHERE gallery='".$gallery["id"]."' ORDER BY name");
+			if (!empty($data["galleries"])) {
+				foreach($data["galleries"] as $gallery) {
+					// first 7 images to feature
+					$data[$gallery["name"]]["images"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, image FROM elrh_gallery_images WHERE gallery='".$gallery["id"]."' ORDER BY ord LIMIT 7");
+					// related galleries
+					$data[$gallery["name"]]["galleries"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT id, name, (SELECT count(*) FROM elrh_gallery_images i WHERE i.gallery=g.id) AS images FROM elrh_gallery_galleries g WHERE parent='".$gallery["id"]."' ORDER BY name");
+					// related articles
+					$data[$gallery["name"]]["articles"] = ELRHDataExtractor::retrieveArray($mysqli, "SELECT a.id, a.name, u.u_displayed_name AS author_name FROM elrh_articles a JOIN elrh_users u ON a.author=u.u_name WHERE gallery='".$gallery["id"]."' ORDER BY name");
+				}
 			}
 		} else {
 			// TODO admin operations
