@@ -17,79 +17,50 @@ class ELRHPageData {
 			// split request by "/" (there might be some extra data regarding image IDs
 			$request = preg_split('~/~', $item);
 			
-			// determine action by request (excluding "login" action - already resolved
+			// determine action by request
+			// excluding "login" action, that already resolved, and "select", that will be resolved later
 			switch ($request[0]) { 
 				case "login":
+				case "select_gallery":
+				case "select_image":
 					// just to avoid falling into "invalid_request" branch
 					break;
 				case "logout":
 					// pefrom logout for current user
 					$data["admin_output"] = ELRHAdminResolver::logoutAction();
 					break;
-				case "select_gallery":
-					// try to load details for gallery
-					// gallery might have been selected by posting form or through direct link
-					if ((!empty($request[1]))&&(is_numeric($request[1]))) {
-						$gallery = $request[1];
-					} else {
-						if (!empty($_POST["gallery"])) {
-							$gallery = $_POST["gallery"];
-						} else {
-							$gallery = 0;
-						}
-					}
-					$data["current_gallery"] = ELRHAdminResolver::selectGalleryAction($mysqli, $gallery);
-					$data["admin_output"] = $data["current_gallery"]["result"];
-					break;
 				case "edit_gallery":
 					// try to perform DB action (add/edit gallery)
 					$data["admin_output"] = ELRHAdminResolver::editGalleryAction($mysqli);
-					// try to load details for edited gallery
-					if (empty($_POST["gid"])) {
-						$_POST["gid"] = 0;
+					// predend "select gallery" action for loading gallery details later in "SELECT actions" block
+					if (!empty($_POST["gid"])) {
+						$request[0] = "load_gallery";
+						$_POST["item"] = $_POST["gid"];
 					}
-					$data["current_gallery"] = ELRHAdminResolver::selectGalleryAction($mysqli, $_POST["gid"]);
 					break;
 				case "delete_gallery":
 					// try to perform DB action (delete gallery)
 					$data["admin_output"] = ELRHAdminResolver::deleteGalleryAction($mysqli);
 					break;
-				case "select_image":
-					// try to load details for image
-					// image might have been selected by posting form or through direct link
-					if ((!empty($request[1]))&&(is_numeric($request[1]))) {
-						$image = $request[1];
-					} else {
-						if (!empty($_POST["image"])) {
-							$image = $_POST["image"];
-						} else {
-							$image = 0;
-						}
-					}
-					$data["current_image"] = ELRHAdminResolver::selectImageAction($mysqli, $image);
-					$data["admin_output"] = $data["current_image"]["result"];
-					// after loading image, try load details for its gallery
-					if ($data["current_image"]["exists"]) {
-						$data["current_gallery"] = ELRHAdminResolver::selectGalleryAction($mysqli, $data["current_image"]["gallery"]);
-					}
-					break;
 				case "edit_image":
 					// try to perform DB action (add/edit image)
 					$data["admin_output"] = ELRHAdminResolver::editImageAction($mysqli);
-					// try to load details for edited image
-					if (empty($_POST["iid"])) {
-						$_POST["iid"] = 0;
+					// predend "select image" action for loading image details later in "SELECT actions" block
+					if (!empty($_POST["iid"])) {
+						$request[0] = "load_image";
+						$_POST["item"] = $_POST["iid"];
 					}
-					$data["current_image"] = ELRHAdminResolver::selectImageAction($mysqli, $_POST["iid"]);
-					// try to load details for image's gallery
-					if ($data["current_image"]["exists"]) {
-						$data["current_gallery"] = ELRHAdminResolver::selectGalleryAction($mysqli, $data["current_image"]["gallery"]);
-					}
+					break;
+				case "delete_image":
+					// try to perform DB action (delete gallery)
+					$data["admin_output"] = ELRHAdminResolver::deleteImageAction($mysqli);
+					// predend "select gallery" action for loading gallery details later in "SELECT actions" block
+					// (ID is set inside deleteImageAction method)
+					$request[0] = "load_gallery";
 					break;
 				case "move_image":
 				case "move_forwards":
 				case "move_backwards":
-				case "delete_image":
 					$data["admin_output"] = "admin_unsupported_request";
 					break;
 				default:
@@ -102,6 +73,44 @@ class ELRHPageData {
 						$data["null"] = "null";
 					}
 			}
+			
+			// SELECT actions
+			// default - no item selected
+			$id = 0;
+			// option 1 - ID given in $_GET request
+			// option 2 - ID given in $_POST request
+			if ((!empty($request[1]))&&(is_numeric($request[1]))) {
+				$id = $request[1];
+			} elseif (!empty($_POST["item"])) {
+				$id = $_POST["item"];
+			}
+			// if there is request - eleaborate it
+			if ($id>0) {
+				switch ($request[0]) {
+					case "select_gallery":
+					case "load_gallery":
+						$data["current_gallery"] = ELRHAdminResolver::selectGalleryAction($mysqli, $id);
+						// for initial select, action result shall be displayed
+						if ($request[0]=="select_gallery") {
+							$data["admin_output"] = $data["current_gallery"]["result"];
+						}
+						break;
+					case "select_image":
+					case "load_image":
+						$data["current_image"] = ELRHAdminResolver::selectImageAction($mysqli, $id);
+						// for initial select, action result shall be displayed
+						if ($request[0]=="select_image") {
+							$data["admin_output"] = $data["current_image"]["result"];
+						}
+						// after loading image, try load details for its gallery
+						if ($data["current_image"]["exists"]) {
+							$data["current_gallery"] = ELRHAdminResolver::selectGalleryAction($mysqli, $data["current_image"]["gallery"]);
+						}
+						break;
+					// select_article and select_link not yet implemented
+				}
+			}
+			// SELECT actions
 			
 			// get necessary data to be displayed throughout administration
 			include_once getcwd().'/scripts/data-helpers/elrh_db_extractor.php';
@@ -130,3 +139,4 @@ class ELRHPageData {
 		return $data;
 	}
 }
+?>

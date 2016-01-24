@@ -27,8 +27,14 @@ class ELRHPageContentRenderer {
 				ELRHAdminRenderer::renderSelectGalleryForm($page_data["texts"], $page_data["current_gallery"], $page_data["galleries"]);
 				// add/edit image
 				ELRHAdminRenderer::renderEditImageForm($page_data["texts"], $page_data["current_gallery"], $page_data["current_image"], $page_data["galleries"], $page_data["images"]);
+				// delete existing image
+				ELRHAdminRenderer::renderDeleteImageForm($page_data["texts"], $page_data["current_gallery"], $page_data["current_image"], $page_data["images"]);
 			echo '</p>'.PHP_EOL;
 			echo '<h2>'.$page_data["texts"]["admin_articles"].'</h2>'.PHP_EOL;
+			echo '<p>'.PHP_EOL;
+				echo $page_data["texts"]["admin_info"].PHP_EOL;
+			echo '</p>'.PHP_EOL;
+			echo '<h2>'.$page_data["texts"]["admin_books"].'</h2>'.PHP_EOL;
 			echo '<p>'.PHP_EOL;
 				echo $page_data["texts"]["admin_info"].PHP_EOL;
 			echo '</p>'.PHP_EOL;
@@ -42,3 +48,4 @@ class ELRHPageContentRenderer {
 		}
 	}
 }
+?>
