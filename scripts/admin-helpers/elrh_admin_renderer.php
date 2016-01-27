@@ -59,6 +59,18 @@ class ELRHAdminRenderer {
 	}
 	
 	/**
+	 * Move existing image to new gallery
+	 * $texts - localized labels and hints
+	 * $current_gallery - selected gallery (if any)
+	 * $current_image - selected image (if any)
+	 * $galleries - available galleries info
+	 */
+	public static function renderMoveImageForm($texts, $current_gallery, $current_image, $galleries) {
+		include_once getcwd().'/scripts/admin-helpers/admin-forms/elrh_forms_image.php';
+		return ELRHImageFormRenderer::renderMoveImageForm($texts, $current_gallery, $current_image, $galleries);
+	}
+	
+	/**
 	 * Delete existing image
 	 * $texts - localized labels and hints
 	 * $current_gallery - selected gallery (if any)

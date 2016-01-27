@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: wm27.wedos.net:3306
--- Generation Time: Jan 24, 2016 at 06:07 PM
+-- Generation Time: Jan 27, 2016 at 08:41 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.23
 
@@ -268,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `elrh_gallery_images` (
   `image` varchar(255) COLLATE latin2_czech_cs NOT NULL,
   `prev` int(8) DEFAULT '0',
   `next` int(8) DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=1335 DEFAULT CHARSET=latin2 COLLATE=latin2_czech_cs;
+) ENGINE=InnoDB AUTO_INCREMENT=1358 DEFAULT CHARSET=latin2 COLLATE=latin2_czech_cs;
 
 --
 -- Dumping data for table `elrh_gallery_images`
@@ -724,11 +724,9 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (980, 'rakcesa', '2014-06-15 13:31:57', 23, 9, 'Fruta_1970(Pivovar)', 'Zbytek pivovaru Krč', '1402831917.jpg', 342, 1023),
 (982, 'rakcesa', '2014-07-21 12:57:15', 60, 4, 'Pankrac', '', '1405940235.jpg', 973, 0),
 (984, 'rakcesa', '2014-09-05 14:08:31', 1, 38, 'krč', '', '1409918911.jpg', 1164, 580),
-(986, 'rakcesa', '2014-10-07 12:27:47', 67, 1, 'Za větrem', '', '1412677667.jpg', 0, 987),
-(987, 'rakcesa', '2014-10-07 12:28:12', 67, 2, 'Za větrem', '', '1412677692.jpg', 986, 0),
 (988, 'rakcesa', '2014-10-07 12:48:22', 68, 1, 'V Zámečku', '', '1412678902.jpg', 0, 0),
 (990, 'ellrohir', '2014-10-16 20:43:15', 1, 24, 'Krč', 'Sanatorium dr. Šimsy, celkový pohled a Welzův zámek', '1413484995.jpg', 25, 538),
-(991, 'ellrohir', '2014-10-16 20:48:31', 1, 48, 'Domov pro seniory', 'Domov pro seniory v ulici Sulická. Postaven 1963, pohlednice odeslána v roce 1968.', '1413485311.jpg', 493, 1313),
+(991, 'ellrohir', '2014-10-16 20:48:31', 1, 48, 'Domov pro seniory', 'Domov pro seniory v ulici Sulická. Postaven 1963, pohlednice odeslána v roce 1968.', '1413485311.jpg', 493, 1345),
 (992, 'ellrohir', '2014-10-16 20:57:01', 4, 1, 'Hudební škola Gustava Endršta', 'Třídní fotografie z Krčské školy vojenské hudby Gustava Endršta založené roku 1896. Ve starých mapách ji lze najít pod č. 310 (r. 1937) nebo pod č. 613 (r. 1948) v kopci v ulici Budějovická u dnešního Metra Kačerov. ', '1413485821.jpg', 0, 609),
 (993, 'rakcesa', '2014-10-19 12:26:26', 42, 5, 'Prodaná nevěsta', 'Dobový plakát zvoucí do Lesního divadla v Krči', '1413714386.jpg', 230, 449),
 (996, 'rakcesa', '2014-10-22 19:11:39', 62, 1, 'Michle', '', '1413997899.jpg', 0, 997),
@@ -741,7 +739,7 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (1004, 'rakcesa', '2014-10-22 19:18:12', 59, 3, 'Nusle', '', '1413998292.jpg', 1003, 1005),
 (1005, 'rakcesa', '2014-10-22 19:18:41', 59, 4, 'Nusle', '', '1413998321.jpg', 1004, 1006),
 (1006, 'rakcesa', '2014-10-22 19:19:06', 59, 5, 'Nusle', '', '1413998346.jpg', 1005, 1027),
-(1007, 'ellrohir', '2014-10-29 13:53:44', 26, 3, 'Vysvědčení', 'Vysvědčení z Dívčí zahradnické školy, ročník 1924.', '1414587224.jpg', 776, 0),
+(1007, 'ellrohir', '2014-10-29 13:53:44', 26, 3, 'Vysvědčení', 'Vysvědčení z Dívčí zahradnické školy, ročník 1924.', '1414587224.jpg', 776, 1348),
 (1008, 'rakcesa', '2014-11-06 14:14:28', 23, 11, 'Etiketa Malvaz', 'Jedna z etiket Krčského pivovaru.', '1415279668.jpg', 1023, 1190),
 (1009, 'rakcesa', '2014-11-28 14:24:59', 4, 4, 'Odznak - Sparta Krč', 'Montáže Praha Sparta Krč', '1417181099.jpg', 887, 0),
 (1010, 'rakcesa', '2014-11-28 14:32:01', 69, 1, 'Sokol Nusle', 'Otevření Sokolovny v Nuslich 28.10.1925', '1417181521.jpg', 0, 1011),
@@ -1020,16 +1018,15 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (1302, 'rakcesa', '2015-11-27 14:19:07', 23, 15, 'Fruta - Víno 1', 'Etiketa z lahve od vína. Firma sídlila v areálu Krčského pivovaru (dnes ulice Víděňská u Jižní spojky)', '1448630347.jpg', 1301, 1303),
 (1303, 'rakcesa', '2015-11-27 14:19:27', 23, 16, 'Fruta - Víno 2', 'Etiketa z lahve od vína. Firma sídlila v areálu Krčského pivovaru (dnes ulice Víděňská u Jižní spojky)', '1448630367.jpg', 1302, 1304),
 (1304, 'rakcesa', '2015-11-27 14:19:44', 23, 17, 'Fruta - Víno 3', 'Etiketa z lahve od vína. Firma sídlila v areálu Krčského pivovaru (dnes ulice Víděňská u Jižní spojky)', '1448630384.jpg', 1303, 1305),
-(1305, 'rakcesa', '2015-11-27 14:20:08', 23, 18, 'Fruta', '', '1448630408.jpg', 1304, 1306);
+(1305, 'rakcesa', '2015-11-27 14:20:08', 23, 18, 'Fruta', '', '1448630408.jpg', 1304, 1306),
+(1306, 'rakcesa', '2015-11-27 14:20:22', 23, 19, 'Fruta - Limonada', 'Dobová lahev od limonády "Ovocenka" vyráběná bývalou Frutou v Krči', '1448630422.jpg', 1305, 1307);
 INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, `name`, `dscr`, `image`, `prev`, `next`) VALUES
-(1306, 'rakcesa', '2015-11-27 14:20:22', 23, 19, 'Fruta - Limonada', 'Dobová lahev od limonády "Ovocenka" vyráběná bývalou Frutou v Krči', '1448630422.jpg', 1305, 1307),
 (1307, 'rakcesa', '2015-11-27 14:20:36', 23, 20, 'Fruta', '', '1448630436.jpg', 1306, 1308),
 (1308, 'rakcesa', '2015-11-27 14:20:48', 23, 21, 'Fruta', '', '1448630448.jpg', 1307, 0),
 (1309, 'rakcesa', '2015-12-03 14:33:47', 17, 2, 'Kojenecký ústav', 'Budova čislo III.', '1449149627.jpg', 666, 667),
 (1310, 'ellrohir', '2016-01-08 18:00:00', 1, 31, 'Krč', 'A ještě jednou, zde jako kolorovaná fotografie.', '1452272056.jpg', 1312, 663),
 (1311, 'ellrohir', '2016-01-08 18:00:00', 8, 0, 'Šimsovo sanatorium', 'Pohled z jihu na hlavní průčelí budovy sanatoria.', '1452273000.jpg', 0, 593),
 (1312, 'ellrohir', '2016-01-08 19:45:00', 1, 30, 'Krč', 'Pro veliký úspěch v zeleném nádechu...', '1452278485.jpg', 482, 1310),
-(1313, 'rakcesa', '2016-01-23 17:40:42', 1, 49, 'Pozdrav z Krče', 'Restaurace "U Labutě", Nádraží, Benešova třída a Masarykovy domovy', '1453567242.jpg', 991, 0),
 (1314, 'ellrohir', '2016-01-23 18:15:28', 17, 5, 'Sanatorium', 'Pod sněhem (leden 2016)<br />Foto: Alois Sečkár', '1453569328.jpg', 680, 1315),
 (1315, 'ellrohir', '2016-01-23 18:16:14', 17, 6, 'Sanatorium', 'Pod sněhem (leden 2016)<br />Foto: Alois Sečkár', '1453569374.jpg', 1314, 1326),
 (1316, 'rakcesa', '2016-01-23 21:32:38', 85, 31, '43', 'Lisek_Foto: Archiv p.Immer', '1453581158.jpg', 1157, 1317),
@@ -1038,14 +1035,27 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (1319, 'rakcesa', '2016-01-23 21:37:22', 85, 34, '46', 'Lisek Foto: Archiv p.Immer', '1453581442.jpg', 1318, 1320),
 (1320, 'rakcesa', '2016-01-23 21:38:08', 85, 35, '47', 'Kačerov Foto: Archiv p.Immer', '1453581488.jpg', 1319, 1321),
 (1321, 'rakcesa', '2016-01-23 21:38:49', 85, 36, '48', 'Kačerov Foto: Archiv p.Immer', '1453581529.jpg', 1320, 1322),
-(1322, 'rakcesa', '2016-01-23 21:39:27', 85, 37, '49', 'Kačerov Foto: Archiv p.Immer', '1453581567.jpg', 1321, 0),
+(1322, 'rakcesa', '2016-01-23 21:39:27', 85, 37, '49', 'Kačerov Foto: Archiv p.Immer', '1453581567.jpg', 1321, 1335),
 (1326, 'rakcesa', '2016-01-23 22:19:29', 17, 7, 'Kojenecký ústav', 'Kojenecký ústav', '1453583969.jpg', 1315, 1329),
 (1329, 'rakcesa', '2016-01-23 22:24:26', 17, 8, 'Kojenecký ústav', 'Kojenecký ústav', '1453584266.jpg', 1326, 1331),
 (1330, 'rakcesa', '2016-01-23 22:25:38', 46, 3, 'Kojenecký ústav', 'Kojenecký ústav', '1453584338.jpg', 793, 0),
 (1331, 'rakcesa', '2016-01-23 22:27:56', 17, 9, 'Kojenecký ústav', 'Kojenecký ústav', '1453584476.jpg', 1329, 1332),
 (1332, 'rakcesa', '2016-01-23 22:38:45', 17, 10, 'Kojenecký ústav', 'Kojenecký ústav', '1453585125.jpg', 1331, 1333),
 (1333, 'rakcesa', '2016-01-23 22:41:02', 17, 11, 'Kojenecký ústav', 'Kojenecký ústav', '1453585262.jpg', 1332, 1334),
-(1334, 'rakcesa', '2016-01-23 22:43:25', 17, 12, 'Kojenecký ústav', 'Kojenecký ústav', '1453585405.jpg', 1333, 0);
+(1334, 'rakcesa', '2016-01-23 22:43:25', 17, 12, 'Kojenecký ústav', 'Kojenecký ústav', '1453585405.jpg', 1333, 0),
+(1335, 'rakcesa', '2016-01-25 23:00:00', 85, 38, 'Vlak', 'Vlak u Kačerova', '1453759200.jpg', 1322, 1337),
+(1337, 'rakcesa', '2016-01-25 23:03:06', 85, 39, 'Vlak', 'Vlak u Kačerova', '1453759386.jpg', 1335, 1338),
+(1338, 'rakcesa', '2016-01-25 23:04:03', 85, 40, 'Vlak', 'Vlak u Kačerova', '1453759443.jpg', 1337, 1339),
+(1339, 'rakcesa', '2016-01-25 23:04:57', 85, 41, 'Vlak', 'Vlak u Kačerova', '1453759497.jpg', 1338, 1343),
+(1343, 'rakcesa', '2016-01-25 23:11:27', 85, 42, 'Vlak', 'Vlak u Kačerova', '1453759887.jpg', 1339, 1344),
+(1344, 'rakcesa', '2016-01-25 23:12:34', 85, 43, 'Vlak', 'Vlak u Kačerova', '1453759954.jpg', 1343, 0),
+(1345, 'rakcesa', '2016-01-26 14:52:32', 1, 49, 'Krč', 'Krč', '1453816352.jpg', 991, 1346),
+(1346, 'rakcesa', '2016-01-26 14:53:40', 1, 50, 'Krč', 'Krč', '1453816420.jpg', 1345, 1347),
+(1347, 'rakcesa', '2016-01-26 14:54:37', 1, 51, 'Krč', 'Krč', '1453816477.jpg', 1346, 0),
+(1348, 'rakcesa', '2016-01-26 14:55:18', 26, 4, 'Krč', 'Krč', '1453816518.jpg', 1007, 0),
+(1355, 'rakcesa', '2016-01-26 15:08:59', 67, 1, 'Restavrace ,,Za Větrem', 'Restavrace ,,Za Větrem', '1453817339.jpg', 0, 1356),
+(1356, 'rakcesa', '2016-01-26 15:09:42', 67, 2, 'Restavrace ,,Za Větrem', 'Restavrace ,,Za Větrem', '1453817382.jpg', 1355, 1357),
+(1357, 'rakcesa', '2016-01-26 15:10:22', 67, 3, 'Restavrace ,,Za Větrem', 'Restavrace ,,Za Větrem', '1453817422.jpg', 1356, 0);
 
 -- --------------------------------------------------------
 
@@ -1233,7 +1243,7 @@ CREATE TABLE IF NOT EXISTS `elrh_texts` (
   `lang` varchar(2) COLLATE utf8_czech_ci NOT NULL,
   `var` varchar(50) COLLATE utf8_czech_ci NOT NULL,
   `value` text COLLATE utf8_czech_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=182 DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 --
 -- Dumping data for table `elrh_texts`
@@ -1416,7 +1426,19 @@ INSERT INTO `elrh_texts` (`id`, `lang`, `var`, `value`) VALUES
 (178, 'cz', 'admin_books', 'Správa knihovny'),
 (179, 'cz', 'admin_delete_image_success', '<div class="admin_ok">Obrázek byl smazán</div>'),
 (180, 'cz', 'admin_delete_gallery_fail', '<div class="admin_error">Nepodařilo se smazat obrázek (chyba databáze)</div>'),
-(181, 'cz', 'admin_delete_image_info', 'Smazat obrázek');
+(181, 'cz', 'admin_delete_image_info', 'Smazat obrázek'),
+(182, 'cz', 'admin_image_notselected', 'Nevybrán žádný obrázek'),
+(183, 'cz', 'admin_image_moveto', 'Přesunout do galerie'),
+(184, 'cz', 'admin_move', 'Přesunout'),
+(185, 'cz', 'admin_move_image_success', '<div class="admin_ok">Obrázek byl přesunut do nové galerie</div>'),
+(186, 'cz', 'admin_move_image_fail', '<div class="admin_error">Nepodařilo se přesunout obrázek (chyba databáze)</div>'),
+(187, 'cz', 'admin_move_image_samegallery', '<div class="admin_error">Nelze přesunout obrázek to stejné galerie! Použijte přesun vpřed/vzad</div>'),
+(188, 'cz', 'admin_image_first', '<div class="admin_error">První obrázek v galerii nelze posunout vzad!</div>'),
+(189, 'cz', 'admin_image_last', '<div class="admin_error">Poslední obrázek v galerii nelze posunout vpřed!</div>'),
+(190, 'cz', 'admin_move_forwards_success', '<div class="admin_ok">Obrázek byl posunut vpřed</div>'),
+(191, 'cz', 'admin_move_backwards_success', '<div class="admin_ok">Obrázek byl posunut vzad</div>'),
+(192, 'cz', 'admin_move_forwards_fail', '<div class="admin_error">Nepodařilo se posunut obrázek vpřed (chyba galerie)</div>'),
+(193, 'cz', 'admin_move_backwards_fail', '<div class="admin_error">Nepodařilo se posunut obrázek vzad (chyba galerie)</div>');
 
 -- --------------------------------------------------------
 
@@ -1437,8 +1459,8 @@ CREATE TABLE IF NOT EXISTS `elrh_users` (
 --
 
 INSERT INTO `elrh_users` (`u_name`, `u_pass`, `u_mail`, `u_web`, `u_displayed_name`) VALUES
-('ellrohir', 'not shown in public rep', 'seckar@svobodni.cz', 'http://alois-seckar.cz', 'Alois Sečkár'),
-('rakcesa', 'not shown in public rep', 'rakcesa@seznam.cz', 'http://krc-historie.cz', 'Anton Sečkár');
+('ellrohir', 'not shown public', 'seckar@svobodni.cz', 'http://alois-seckar.cz', 'Alois Sečkár'),
+('rakcesa', 'not shown public', 'rakcesa@seznam.cz', 'http://krc-historie.cz', 'Anton Sečkár');
 
 --
 -- Indexes for dumped tables
@@ -1561,7 +1583,7 @@ ALTER TABLE `elrh_gallery_galleries`
 -- AUTO_INCREMENT for table `elrh_gallery_images`
 --
 ALTER TABLE `elrh_gallery_images`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1335;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1358;
 --
 -- AUTO_INCREMENT for table `elrh_links`
 --
@@ -1586,7 +1608,7 @@ ALTER TABLE `elrh_news`
 -- AUTO_INCREMENT for table `elrh_texts`
 --
 ALTER TABLE `elrh_texts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=182;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=194;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

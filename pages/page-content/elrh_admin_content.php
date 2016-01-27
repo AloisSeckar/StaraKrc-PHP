@@ -27,6 +27,8 @@ class ELRHPageContentRenderer {
 				ELRHAdminRenderer::renderSelectGalleryForm($page_data["texts"], $page_data["current_gallery"], $page_data["galleries"]);
 				// add/edit image
 				ELRHAdminRenderer::renderEditImageForm($page_data["texts"], $page_data["current_gallery"], $page_data["current_image"], $page_data["galleries"], $page_data["images"]);
+				// move existing image
+				ELRHAdminRenderer::renderMoveImageForm($page_data["texts"], $page_data["current_gallery"], $page_data["current_image"], $page_data["galleries"]);
 				// delete existing image
 				ELRHAdminRenderer::renderDeleteImageForm($page_data["texts"], $page_data["current_gallery"], $page_data["current_image"], $page_data["images"]);
 			echo '</p>'.PHP_EOL;

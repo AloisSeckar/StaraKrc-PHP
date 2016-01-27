@@ -63,7 +63,7 @@ class ELRHImageFormRenderer {
 		// 2nd - form to add/edit image
 		echo '<form method="post" action="/admin/edit_image" enctype="multipart/form-data">'.PHP_EOL;
 			echo '<table class="admin">'.PHP_EOL;
-				// info about selected gallery
+				// info about selected image
 				echo '<tr>'.PHP_EOL;
 					echo '<td class="label">'.$texts["admin_image_current"].':</td>'.PHP_EOL;
 					echo '<td class="value">'.PHP_EOL;
@@ -126,6 +126,61 @@ class ELRHImageFormRenderer {
 						} else {
 							// add new
 							echo '<input type="submit" value="'.$texts["admin_add"].'">'.PHP_EOL;
+						}
+					echo '</td>'.PHP_EOL;
+				echo '</tr>'.PHP_EOL;
+			echo '</table>'.PHP_EOL;
+		echo '</form>'.PHP_EOL;
+	}
+	
+	/**
+	 * Move existing image to new gallery
+	 * $texts - localized labels and hints
+	 * $current_gallery - selected gallery (if any)
+	 * $current_image - selected image (if any)
+	 * $galleries - available galleries info
+	 */
+	public static function renderMoveImageForm($texts, $current_gallery, $current_image, $galleries) {
+		// to avoid php warnings...
+		if (!$current_image["exists"]) {
+			$current_image["id"] = 0;
+		}
+		// render form
+		echo '<form method="post" action="/admin/move_image">'.PHP_EOL;
+			echo '<table class="admin">'.PHP_EOL;
+				// info about selected image
+				echo '<tr>'.PHP_EOL;
+					echo '<td class="label">'.$texts["admin_image_current"].':</td>'.PHP_EOL;
+					echo '<td class="value">'.PHP_EOL;
+						if ($current_image["exists"]) {
+							echo '<a href="/gallery/i/'.$current_image["id"].'">'.$current_image["name"].'(#'.$current_image["id"].')</a>'.PHP_EOL;
+						} else {
+							echo $texts["admin_image_notselected"].PHP_EOL;
+						}
+						echo '<input type="hidden" name="iid" value="'.$current_image["id"].'">'; // store ID value for processing script (0 means new)
+					echo '</td>'.PHP_EOL;
+				echo '</tr>'.PHP_EOL;
+				// info about current gallery
+				echo '<tr>'.PHP_EOL;
+					echo '<td class="label">'.$texts["admin_image_gallery"].':</td>'.PHP_EOL;
+					echo '<td class="value">'.PHP_EOL;
+						if ($current_gallery["exists"]) {
+							echo '<a href="/gallery/g/'.$current_gallery["id"].'">'.$current_gallery["name"].'</a>'.PHP_EOL;
+						} else {
+							echo $texts["admin_image_notselected"].PHP_EOL;
+						}
+					echo '</td>'.PHP_EOL;
+				echo '</tr>'.PHP_EOL;
+				// select gallery to move image to
+				echo '<tr>'.PHP_EOL;
+					echo '<td class="label">'.$texts["admin_image_moveto"].':</td>'.PHP_EOL;
+					echo '<td class="value">'.PHP_EOL;
+						if ($current_image["exists"]) {
+							include_once getcwd().'/scripts/admin-helpers/admin-forms/elrh_forms_gallery.php';
+							echo ELRHGalleryFormRenderer::renderGalleriesSelect("target", $galleries, false, $current_image["gallery"]).PHP_EOL;
+							echo ' <input type="submit" value="'.$texts["admin_move"].'">'.PHP_EOL;
+						} else {
+							echo $texts["admin_image_notselected"].PHP_EOL;
 						}
 					echo '</td>'.PHP_EOL;
 				echo '</tr>'.PHP_EOL;
@@ -209,8 +264,8 @@ class ELRHImageFormRenderer {
 		$imageNavigation = '';
 			// to prev image
 			if ($prev!=0) {
-				$imageNavigation .= '<a href="/admin/move_backwards/'.$prev.'"><img src="/images/image_backwards.gif" alt="'.$lang["admin_image_backwards"].'" title="'.$lang["admin_image_prev"].'" height="'.$size.'" /></a> '.PHP_EOL;
-				$imageNavigation .= '<a href="/admin/select_image/'.$prev.'"><img src="/images/image_prev.gif" alt="'.$lang["admin_image_prev"].'" title="'.$lang["admin_image_backwards"].'" height="'.$size.'" /></a> '.PHP_EOL;
+				$imageNavigation .= '<a href="/admin/move_backwards/'.$iid.'"><img src="/images/image_backwards.gif" alt="'.$lang["admin_image_backwards"].'" title="'.$lang["admin_image_backwards"].'" height="'.$size.'" /></a> '.PHP_EOL;
+				$imageNavigation .= '<a href="/admin/select_image/'.$prev.'"><img src="/images/image_prev.gif" alt="'.$lang["admin_image_prev"].'" title="'.$lang["admin_image_prev"].'" height="'.$size.'" /></a> '.PHP_EOL;
 			} else {
 				$imageNavigation .= '<img src="/images/image_prev_none.gif" alt="'.$lang["admin_image_backwards"].'" title="'.$lang["admin_image_backwards"].'" height="'.$size.'" /> '.PHP_EOL;
 				$imageNavigation .= '<img src="/images/image_prev_none.gif" alt="'.$lang["admin_image_prev"].'" title="'.$lang["admin_image_prev"].'" height="'.$size.'" /> '.PHP_EOL;
@@ -220,7 +275,7 @@ class ELRHImageFormRenderer {
 			// to next image
 			if ($next!=0) {
 				$imageNavigation .= '<a href="/admin/select_image/'.$next.'"><img src="/images/image_next.gif" alt="'.$lang["admin_image_next"].'" title="'.$lang["admin_image_next"].'" height="'.$size.'" /></a> '.PHP_EOL;
-				$imageNavigation .= '<a href="/admin/move_forwards/'.$next.'"><img src="/images/image_forwards.gif" alt="'.$lang["admin_image_forwards"].'" title="'.$lang["admin_image_forwards"].'" height="'.$size.'" /></a> '.PHP_EOL;
+				$imageNavigation .= '<a href="/admin/move_forwards/'.$iid.'"><img src="/images/image_forwards.gif" alt="'.$lang["admin_image_forwards"].'" title="'.$lang["admin_image_forwards"].'" height="'.$size.'" /></a> '.PHP_EOL;
 			} else {
 			  $imageNavigation .= ' <img src="/images/image_next_none.gif" alt="'.$lang["admin_image_next"].'" title="'.$lang["admin_image_next"].'" height="'.$size.'" />'.PHP_EOL;
 			  $imageNavigation .= ' <img src="/images/image_next_none.gif" alt="'.$lang["admin_image_forwards"].'" title="'.$lang["admin_image_forwards"].'" height="'.$size.'" />'.PHP_EOL;

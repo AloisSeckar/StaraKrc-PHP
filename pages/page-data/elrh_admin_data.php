@@ -52,16 +52,36 @@ class ELRHPageData {
 					}
 					break;
 				case "delete_image":
-					// try to perform DB action (delete gallery)
+					// try to perform DB action (delete image)
 					$data["admin_output"] = ELRHAdminResolver::deleteImageAction($mysqli);
 					// predend "select gallery" action for loading gallery details later in "SELECT actions" block
 					// (ID is set inside deleteImageAction method)
 					$request[0] = "load_gallery";
 					break;
 				case "move_image":
+					// try to perform DB action (move image to other gallery)
+					$data["admin_output"] = ELRHAdminResolver::moveImageToGalleryAction($mysqli);
+					// predend "select image" action for loading image details later in "SELECT actions" block
+					if (!empty($_POST["iid"])) {
+						$request[0] = "load_image";
+						$_POST["item"] = $_POST["iid"];
+					}
+					break;
 				case "move_forwards":
+					$data["admin_output"] = ELRHAdminResolver::moveImageForwardsAction($mysqli, $request[1]);
+					// predend "select image" action for loading image details later in "SELECT actions" block
+					if (!empty($request[1])) {
+						$request[0] = "load_image";
+						$_POST["item"] = $request[1];
+					}
+					break;
 				case "move_backwards":
-					$data["admin_output"] = "admin_unsupported_request";
+					$data["admin_output"] = ELRHAdminResolver::moveImageBackwardsAction($mysqli, $request[1]);
+					// predend "select image" action for loading image details later in "SELECT actions" block
+					if (!empty($request[1])) {
+						$request[0] = "load_image";
+						$_POST["item"] = $request[1];
+					}
 					break;
 				default:
 					if (!empty($item)) {

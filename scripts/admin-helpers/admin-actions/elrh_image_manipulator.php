@@ -9,7 +9,7 @@
 	public static function editImageAction($mysqli) {
 		// check for image name - MANDATORY atribute
 		if (!empty($_POST["name"])) {
-			// get posted gallery ID
+			// get posted image ID
 			if (!empty($_POST["iid"])) {
 				// edit existing image
 				// check if exists
@@ -93,7 +93,7 @@
 		if (!empty($_POST["item"])) {
 			// check for given image in DB
 			include_once getcwd().'/scripts/data-helpers/elrh_db_extractor.php';
-			$result = ELRHDataExtractor::retrieveRow($mysqli, "SELECT id, gallery, image, prev, next FROM elrh_gallery_images WHERE id='".mysqli_real_escape_string($mysqli, $_POST["item"])."'");
+			$result = ELRHDataExtractor::retrieveRow($mysqli, "SELECT id, gallery, ord, image, prev, next FROM elrh_gallery_images WHERE id='".mysqli_real_escape_string($mysqli, $_POST["item"])."'");
 			if ((!empty($result))&&($result[0]!="db_error")) {
 				// image details loaded
 				include_once getcwd().'/scripts/data-helpers/elrh_db_manipulator.php';
@@ -113,6 +113,12 @@
 				if ($query) {
 					if ($result["next"]>0) {
 						$query = ELRHDataManipulator::editRecord($mysqli, "UPDATE elrh_gallery_images SET prev='".$result["prev"]."' WHERE id='".$result["next"]."'");
+					}
+				}
+				// 4th - adjust ord (ord--) for next and all other images
+				if ($query) {
+					if ($result["next"]>0) {
+						$query = ELRHDataManipulator::editRecord($mysqli, "UPDATE elrh_gallery_images SET ord=ord-1 WHERE ord>'".$result["ord"]."' AND gallery='".$result["gallery"]."'");
 					}
 				}
 				// h4x for keeping "current_gallery" info
@@ -137,6 +143,8 @@
 	
 	// PRIVATE FUNCTIONS
 	
+	// turn extension-type from given file to file extension
+	// returns error for unsupported extensions
 	private static function getImageExtension($file) {
 		switch ($file["type"]) {
 			case "image/jpeg":
@@ -152,6 +160,7 @@
 		}
 	}
 	
+	// creates 100x75 thumb for given image in given location
 	private static function createThumb($source, $target) {
 		include_once getcwd().'/scripts/external/ImageResize.php';
 		$image = new \Eventviva\ImageResize($source);
