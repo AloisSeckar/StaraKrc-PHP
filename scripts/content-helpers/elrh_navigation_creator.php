@@ -22,16 +22,22 @@ class ELRHNavigationCreator {
 	
 	/** 
 	 * Builds a navigation box for browsing through images in gallery.
+	 * $id - ID of current image
 	 * $prev - ID of previous image in gallery
 	 * $next - ID of next image in gallery
 	 * $gallery - ID of parent gallery
 	 */
-	// TODO implement admin functions for moving back/forward
-	public static function createImageNavbox($prev, $next, $gallery, $lang) { 
+	public static function createImageNavbox($iid, $prev, $next, $gallery, $lang) { 
 	    // icon dimensons
 		$size = 24;
 	    // build navigation 
 		$navigation = '';
+			// link to move image backwards (admin only)
+			if (($prev!=0)&&(isset($_SESSION["user"]))) {
+				$navigation .= '<a href="/admin/move_backwards/'.$iid.'"><img src="/images/image_backwards.gif" alt="'.$lang["move_backwards"].'" title="'.$lang["move_backwards"].'" height="'.$size.'" /></a> '.PHP_EOL;
+			} else {
+				$navigation .= '<img src="/images/image_prev_none.gif" alt="'.$lang["move_backwards"].'" title="'.$lang["move_backwards"].'" height="'.$size.'" /> '.PHP_EOL;
+			}
 			// link to prev image
 			if ($prev!=0) {
 				$navigation .= '<a href="/gallery/i/'.$prev.'"><img src="/images/image_prev.gif" alt="'.$lang["prev"].'" title="'.$lang["prev"].'" height="'.$size.'" /></a> '.PHP_EOL;
@@ -45,6 +51,12 @@ class ELRHNavigationCreator {
 				$navigation .= ' <a href="/gallery/i/'.$next.'"><img src="/images/image_next.gif" alt="'.$lang["next"].'" title="'.$lang["next"].'" height="'.$size.'" /></a>'.PHP_EOL;
 			} else {
 			  $navigation .= ' <img src="/images/image_next_none.gif" alt="'.$lang["next"].'" title="'.$lang["next"].'" height="'.$size.'" />'.PHP_EOL;
+			}
+			// link to move image forwards (admin only)
+			if (($next!=0)&&(isset($_SESSION["user"]))) {
+				$navigation .= '<a href="/admin/move_forwards/'.$iid.'"><img src="/images/image_forwards.gif" alt="'.$lang["move_forwards"].'" title="'.$lang["move_forwards"].'" height="'.$size.'" /></a> '.PHP_EOL;
+			} else {
+				$navigation .= '<img src="/images/image_next_none.gif" alt="'.$lang["move_forwards"].'" title="'.$lang["move_forwards"].'" height="'.$size.'" /> '.PHP_EOL;
 			}
 		// return navbox result
 		return $navigation;

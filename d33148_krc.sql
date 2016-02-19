@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: wm27.wedos.net:3306
--- Generation Time: Jan 27, 2016 at 08:41 PM
+-- Generation Time: Feb 19, 2016 at 02:53 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.23
 
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `elrh_gallery_galleries` (
   `created` datetime NOT NULL,
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_czech_ci DEFAULT NULL,
   `dscr` text CHARACTER SET utf8 COLLATE utf8_czech_ci
-) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=latin2 COLLATE=latin2_czech_cs PACK_KEYS=0;
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=latin2 COLLATE=latin2_czech_cs PACK_KEYS=0;
 
 --
 -- Dumping data for table `elrh_gallery_galleries`
@@ -249,7 +249,8 @@ INSERT INTO `elrh_gallery_galleries` (`id`, `parent`, `author`, `created`, `name
 (91, 86, 'ellrohir', '2015-06-14 15:21:25', 'Ledárny', '<p>Chátrající areál budov na břehu Vltavy v Braníku. V první polovině 20. století zde bylo zázemí pro průmyslovou těžbu a skladování Vltavského ledu.\r\n<br />Více na odkazu: <a href="http://cs.wikipedia.org/wiki/Branick%C3%A9_led%C3%A1rny">http://cs.wikipedia.org/wiki/Branické_ledárny</a>\r\n</p>\r\n\r\n<p>Zde na fotkách aktuální stav v roce 2015.</p>'),
 (92, 2, 'ellrohir', '2015-07-06 11:18:35', 'Srovnávací fotografie', 'Galerie srovnávacích snímků "dříve a dnes".'),
 (94, 32, 'rakcesa', '2015-07-09 15:01:19', '408 - Krčská vodárna', '<p><b>Članek z novin, Jaroslav Jásek</b><br />Na hráně krčské stráně, v trojúhelníku, který tvoří ulice ševce Matouše, Zachova a U krčské vodárny, stála ještě ve třicátých letech tohoto století vodárenská věž. Mnoho informaci se o tomto věžovém vodojemu nedochovalo. Čtrnáct metrů vysoká železobetonová stavba v sobě ukrývala nádrž (průměr 4,6 m, výška vody 5 m) o kubatuře 83 m3. Byla postavena údajně obcí Krč v roce 1912 a ve dvacátých letech byla opravována, je známo, že fungovala v roce 1926, pak zprávy mizí. Tato vodárna zpočátku zásobovala oblast Horní a Dolní Krče pitnou vodou z nedaleké studny. Později byl celý systém přepojen na vodárnu na Zelené lišce. Jediné, co po vodárně zbylo, je název ulice a fotografie. Archív mlčí...</p>\r\n\r\n<p>\r\nADRESA: Praha 4 - Krč, č. kat. 1528/1, ul. U Krčské vodárny.<br />\r\nPŮVODNÍ STAV: <br />Funkce: Věžový vodojem pro pitnou vodu.<br />\r\nMajitel: Krčská obec.<br />\r\nAutor a rok výstavby: Projekční kancelář Společné vodárny, 1912.<br />\r\nSOUČASNÝ STAV: Zbořeno asi ve 30. letech 20. století.\r\n</p>'),
-(95, 4, 'rakcesa', '2015-08-17 13:33:55', '599 - Krč v okrese Písek', 'Vesnice u Protivína význačná tím, že se jmenuje stejně jako ta naše Krč Pražská :)');
+(95, 4, 'rakcesa', '2015-08-17 13:33:55', '599 - Krč v okrese Písek', 'Vesnice u Protivína význačná tím, že se jmenuje stejně jako ta naše Krč Pražská :)'),
+(96, 4, 'rakcesa', '2016-01-29 22:33:10', '508 - Sport', '<strong>Z <a href="https://cs.wikipedia.org/wiki/SK_Sparta_Kr%C4%8D">wikipedie</a>:</strong> V roce 1910 se v Krči začal hrát fotbal pod názvem RH Krč, z té doby neexistují písemné záznamy. Sportovní činnost pak přerušila válka, a tak první písemné záznamy pocházejí z roku 1919, kdy byl založen klub Sparta Krč. Ten se v témže roce přihlásil do soutěží organizovaných Středočeskou fotbalovou župou a byl zařazen do nejnižší, tedy IV. třídy. V roce 1923 se klub přejmenoval na RH Praha XIV, o 4 roky později na AFK Sparta Praha XIV, v témže roce přišel první postup do III. třídy a v následujícím roce přejmenování na AFK Sparta Krč. O další rok později Krč postoupila do II. třídy a za další rok do I. A třídy, nejvyšší soutěže organizované středočeskou župou. Po válce, v roce 1945, se klub přejmenoval na Sokol Krč. V roce 1953 v rámci velkých sportovních reorganizací přišlo sloučení s Jiskrou Michle do TJ Montáže Krč. Název Montáže vydržel s obměnami (1957 – TJ Jiskra Montáže Praha, 1961 – TJ Montáže Praha) až do roku 1992. V letech 1951–60 hrála Krč českou divizi. V následujících 10 letech následoval sestup až do I. B třídy, odkud se podařil návrat do Pražského přeboru až v roce 1977. V 80. letech se pohybovala Krč na úrovni Pražského přeboru a divize. V roce 1990 přišel historicky první postup do třetí nejvyšší soutěže (tehdejší II. ČNL). V roce 1992 se klub vrátil k tradičnímu názvu FC Sparta BB Krč. V roce 1995 se pak přejmenoval na dnešní název SK Sparta Krč. Od roku 1993 hrála Krč s výjimkou sezón 1995/96, 2004/05, kdy sestoupila na rok do divize, pravidelně ČFL. V roce 2007, kdy obsadila 2. místo v ČFL, pak dodatečně nahradila Blšany, které nedostaly potřebnou licenci, ve 2. lize, a dosáhla tak historického úspěchu.');
 
 -- --------------------------------------------------------
 
@@ -268,7 +269,7 @@ CREATE TABLE IF NOT EXISTS `elrh_gallery_images` (
   `image` varchar(255) COLLATE latin2_czech_cs NOT NULL,
   `prev` int(8) DEFAULT '0',
   `next` int(8) DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=1358 DEFAULT CHARSET=latin2 COLLATE=latin2_czech_cs;
+) ENGINE=InnoDB AUTO_INCREMENT=1372 DEFAULT CHARSET=latin2 COLLATE=latin2_czech_cs;
 
 --
 -- Dumping data for table `elrh_gallery_images`
@@ -333,13 +334,12 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (345, 'rakcesa', '2010-11-06 12:16:55', 13, 12, 'Zbouraná Krč', 'Od nového nádraží pohled na severozápad. Objekt uprostřed by měl být hotel Klimeš, vpravo od něj Kaplička, která jediná z budov v popředí přežila stavbu Jižní spojky.', '1289042207.jpg', 344, 346),
 (346, 'rakcesa', '2010-11-06 12:18:01', 13, 13, 'Zbouraná Krč', 'Pohled na sever k Ryšánce. Budovy v popředí zmizely během stavby Jižní spojky.', '1289042281.jpg', 345, 347),
 (347, 'rakcesa', '2010-11-06 12:18:45', 13, 14, 'Zbouraná Krč', 'A konečně pohled směrem severovýchodním, zhruba tam, kde se dnes nachází vysoká zástavba kolem Budějovické. Zchátralých objektů bývalých ledáren v popředí jako jedněch z mála škoda nebyla, za stromy je skrytá budova staré školy. Také tyto stavby zmizely při stavbě Jižní spojky. ', '1289042325.jpg', 346, 695),
-(349, 'rakcesa', '2010-11-06 12:39:08', 8, 24, 'Šimsovo sanatorium', 'Pohled do lázeňského bazénu', '1289043548.jpg', 788, 789),
+(349, 'rakcesa', '2010-11-06 12:39:08', 8, 24, 'Šimsovo sanatorium', 'Pohled do lázeňského bazénu', '1289043548.jpg', 788, 352),
 (350, 'rakcesa', '2010-11-06 12:39:39', 1, 41, 'Krč', 'Fotbalové utkání v areálu "Za nádražím" v pravo Višňovka vzadu Kunratický les', '1289043579.jpg', 547, 353),
 (351, 'rakcesa', '2010-11-06 12:40:35', 1, 43, 'Krč', 'Vilová zástavba při pohledu z Višňovky', '1289043634.jpg', 353, 796),
-(352, 'rakcesa', '2010-11-06 12:41:11', 8, 26, 'Sanatorium', 'Od pomníku padlých v 1. sv. válce', '1289043671.jpg', 789, 1300),
+(352, 'rakcesa', '2010-11-06 12:41:11', 8, 25, 'Sanatorium', 'Od pomníku padlých v 1. sv. válce', '1289043671.jpg', 349, 1300),
 (353, 'rakcesa', '2010-11-06 12:42:26', 1, 42, 'Krč', 'U dnešního Domova duchodců v ulici Sulická. Pohled zřejmě směrem do vilek dnešní Lhotky.', '1289043746.jpg', 350, 351),
 (354, 'rakcesa', '2010-11-06 12:44:40', 8, 29, 'Sanatorium', 'Z Višňovky', '1289043880.jpg', 791, 790),
-(355, 'rakcesa', '2010-11-06 12:45:21', 1, 46, 'Krč', 'Zhruba na úrovni dnešní křižovatky Sulická/Matek/Pod Višňovkou, pohled směrem na jih - vpravo je vidět plot a dnešní vrátnice areálu Šimsova sanatoria. Levou část obrázku by dnes zakrýval rozsáhlý blok bytových domů.', '1289043921.jpg', 1239, 493),
 (388, 'rakcesa', '2010-11-12 11:41:22', 2, 2, 'Krč', 'Pohled z Budějovické stráně směrem k jihu. V popředí Jižní spojka, za ní vlevo je opravený Welzův zámek a budova Nádraží Praha-Krč. Za železniční tratí vilová zástavba. Uprostřed žlutá budova Šimsova santoria. Vzadu za lesem, který ukrývá zbytky Lesního divadla Sídliště Krč a vpravo nahoře Novodvorská.', '1289558481.jpg', 389, 390),
 (389, 'rakcesa', '2010-11-12 11:42:48', 2, 1, 'Krč', 'Pohled z Budějovické stráně směrem na jihozápad. Vlevo Kunratický les a areál Thomayerovy nemocnice, v popředí skrytá Jižní Spojka, za ní areál bývalé Fruty, pásem zeleně oddělený od železniční trasy 210. Volné prostranství uprostřed patří Zahradnické škole, vzadu a vpravo nahoře jsou vidět panelové domy Sídliště Krč. Vpravo uprostřed začíná vilová zástavba.', '1289558566.jpg', 0, 388),
 (390, 'rakcesa', '2010-11-12 11:54:02', 2, 3, 'Krč', 'Pohled ze stráně nad Kunratickým potokem západním směrem do otevřeného údolí Kunratického potoka. V popředí areál autobazaru při ulici Vídeňská, doleva směr Thomayerova nemocnice, doprava směr Kačerov. Vlevo je vidět budova Šimsova sanatoria. Uprostřed Jižní spojka a sklady stabebnin v ulici U Krčského Nádraží. V pozadí Branická zástavba a úplně vzadu Barrandov na druhém břehu Vltavy.', '1289559242.jpg', 388, 391),
@@ -378,7 +378,7 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (488, 'rakcesa', '2011-04-25 15:49:10', 21, 12, 'Bývalá trať Nusle-Krč-Modřany', 'Toto malé přemostění úzkého potoka se nachází malý kus západně od viaduktu z předchozích snímků. Ze samotné železnice zbyly dnes už jen stále jasně patrné obrysy náspu. Koleje jsou dávno pryč.', '1303739348.jpg', 616, 830),
 (489, 'rakcesa', '2011-04-25 15:54:27', 21, 21, 'Bývalá trať Nusle-Krč-Modřany', 'Tentýž kamenný most z druhé strany. Pohled severním směrem k Jižní spojce ukryté kdesi za budovou v pozadí.', '1303739665.jpg', 487, 835),
 (491, 'rakcesa', '2011-05-14 17:43:03', 1, 8, 'Krč', '', '1305387774.jpg', 288, 10),
-(493, 'rakcesa', '2011-06-03 18:51:58', 1, 47, 'Krč', 'Bloky moderních bytových domů, křížení současných ulic Za zelenou liškou a Senožatská (děkujeme za upřesnění panu Vladimíru Čermákovi)', '1307119918.jpg', 355, 991),
+(493, 'rakcesa', '2011-06-03 18:51:58', 1, 49, 'Krč', 'Bloky moderních bytových domů, křížení současných ulic Za zelenou liškou a Senožatská (děkujeme za upřesnění panu Vladimíru Čermákovi)', '1307119918.jpg', 991, 0),
 (497, 'rakcesa', '2011-07-03 14:04:18', 9, 2, 'Sokol', 'Odznak sokola Krč', '1309694658.jpg', 950, 481),
 (504, 'rakcesa', '2011-08-06 21:39:08', 36, 3, 'Hotel Klimš', 'Okolí Klimšů', '1312659548.jpg', 188, 0),
 (509, 'rakcesa', '2011-09-30 20:01:50', 5, 1, 'Lesní divadlo', 'Stavba', '1317405708.jpg', 0, 709),
@@ -444,7 +444,7 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (627, 'rakcesa', '2012-12-23 10:20:46', 24, 1, 'Restaurace Hájovna', 'Pohled na areál bývalé lesní restaurace', '1356254446.jpg', 0, 628),
 (628, 'rakcesa', '2012-12-23 10:21:02', 24, 2, 'Restaurace Hájovna', 'Pohlednice s tématem restaurace Hájovna\r\n', '1356254462.jpg', 627, 632),
 (629, 'rakcesa', '2012-12-23 10:21:21', 24, 4, 'Restaurace Hájovna', '', '1356254481.jpg', 632, 630),
-(630, 'rakcesa', '2012-12-23 10:21:41', 24, 5, 'Restaurace Hájovna', '', '1356254501.jpg', 629, 0),
+(630, 'rakcesa', '2012-12-23 10:21:41', 24, 5, 'Restaurace Hájovna', '', '1356254501.jpg', 629, 1363),
 (632, 'rakcesa', '2012-12-23 10:32:13', 24, 3, 'Restaurace Hájovna', 'Podepsaná pohlednice s tématem restaurace Hájovna', '1356255133.jpg', 628, 629),
 (633, 'rakcesa', '2012-12-23 15:20:55', 30, 2, 'Restaurace Hájovna', 'Pohled z cesty směrem proti jižnímu svahu nad bývalou restaurací. Zarostlé mladým porostem jsou vidět některé pozůstatky. (Rok 2006)', '1356272455.jpg', 634, 847),
 (634, 'rakcesa', '2012-12-23 15:27:50', 30, 1, 'Restaurace Hájovna', 'Pohled od severu. Okolo bývalého areálu nyní vede cyklostezka a turistická trasa mezi Krčí a Roztyly. V lese lze rozpoznat už jen zbytky základů a sklepů. Jeden z betonových základů je vidět na snímku, vpravo od běžce. (Rok 2006)', '1356272870.jpg', 0, 633),
@@ -565,14 +565,14 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (786, 'ellrohir', '2013-12-05 20:08:45', 8, 4, 'Sanatorium', 'Podobný panoramatický pohled na areál', '1386270524.jpg', 595, 596),
 (787, 'ellrohir', '2013-12-05 20:09:22', 8, 19, 'Sanatorium', 'Barevná ilustrace, pohled z jihu', '1386270562.jpg', 975, 846),
 (788, 'ellrohir', '2013-12-05 20:10:29', 8, 23, 'Sanatorium', 'Budova "Orient" z jiného úhlu (severovýchod)', '1386270629.jpg', 665, 349),
-(789, 'ellrohir', '2013-12-05 20:11:40', 8, 25, 'Sanatorium', 'Novější snímek při pohledu od vjezdové vrátnice', '1386270700.jpg', 349, 352),
+(789, 'ellrohir', '2013-12-05 20:11:40', 8, 27, 'Sanatorium', 'Novější snímek při pohledu od vjezdové vrátnice', '1386270700.jpg', 1300, 791),
 (790, 'ellrohir', '2013-12-05 20:12:41', 8, 30, 'Sanatorium', 'Skica', '1386270754.jpg', 354, 0),
-(791, 'ellrohir', '2013-12-05 20:13:40', 8, 28, 'Sanatorium', 'Budovy bývalých lázní v areálu', '1386270820.jpg', 1300, 354),
+(791, 'ellrohir', '2013-12-05 20:13:40', 8, 28, 'Sanatorium', 'Budovy bývalých lázní v areálu', '1386270820.jpg', 789, 354),
 (792, 'ellrohir', '2013-12-05 20:18:49', 46, 1, 'Inzerát', 'Dobový inzerát z tisku', '1386271129.jpg', 0, 793),
 (793, 'ellrohir', '2013-12-05 20:19:24', 46, 2, 'Inzerát', 'Dobový inzerát z tisku', '1386271163.jpg', 792, 1330),
 (794, 'ellrohir', '2013-12-05 20:29:44', 6, 7, 'Masarykovy domovy', 'A ještě z jiného úhlu', '1386271784.jpg', 613, 795),
 (795, 'ellrohir', '2013-12-05 20:30:49', 6, 8, 'Masarykovy domovy', 'Další varianta této zřejmě oblíbené fotografické kompozice.', '1386271849.jpg', 794, 614),
-(796, 'ellrohir', '2014-01-20 13:34:14', 1, 44, 'Krč', 'Několik pohledů na starou Krč - areál školy u Krčského hřibtova, domy u Ryšánky a budova hotelu Klimeš, která musela ustoupit Jižní Spojce.', '1390221254.jpg', 351, 1239),
+(796, 'ellrohir', '2014-01-20 13:34:14', 1, 44, 'Krč', 'Několik pohledů na starou Krč - areál školy u Krčského hřibtova, domy u Ryšánky a budova hotelu Klimeš, která musela ustoupit Jižní Spojce.', '1390221254.jpg', 351, 1346),
 (797, 'rakcesa', '2014-01-30 14:33:14', 7, 8, 'Krč', 'O pár let později směr nahoru, objekt restaurace je na tomto snímku vidět vlevo', '1391088794.jpg', 528, 798),
 (798, 'rakcesa', '2014-01-30 14:33:32', 7, 9, 'Restaurace U Labutě', 'Auta už v ulici Thomayerova jezdí jen ve směru ke Kačerovu, hlavní provoz po Vídeňské se posunul o pár metrů západněji na rozšířenou silnici.', '1391088812.jpg', 797, 0),
 (799, 'rakcesa', '2014-01-30 14:48:00', 7, 4, 'Restaurace U Labutě', 'Nahoře - pohled od jihu z ulice, ve které stojí (dnes Thomayerova). Domy naproti už pochopitelně nestojí. Dole - pohled přes rybník Labuť, zhruba tam, kde se k němu dnes dostává cyklostezka od Braníka.', '1391089680.jpg', 523, 521),
@@ -606,9 +606,9 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (836, 'rakcesa', '2014-02-22 10:43:26', 21, 25, 'Trať 210', 'Pohled ze západního konce dnešního nádraží, z konce slepé koleje na jižní straně. Dnešní nádražní budova se nachází mezi jehličnatými stromy a sloupem elektrického vedení.', '1393062206.jpg', 834, 838),
 (837, 'rakcesa', '2014-02-22 10:43:39', 21, 28, 'Trať 210', 'A z téhož místa pohled na východ. Nákladní vlak míří po nově vedené trati k Vršovicím.', '1393062219.jpg', 839, 0),
 (838, 'rakcesa', '2014-02-22 10:44:06', 21, 26, 'Trať 210', 'Tento pohled se dívá na západ, zachycuje v levé části areál společenské zahrady (budova je ovšem rohová vila ulice U Společenské zahrady a U Krčského nádraží) a byl pořízen z míst, kde bývalo staré nádraží.', '1393062246.jpg', 836, 839),
-(839, 'rakcesa', '2014-02-22 10:44:18', 21, 27, 'Trať 210', 'Ze stejného místa, zde je vidět budova "Hotelu Slunce".', '1393062258.jpg', 838, 837);
+(839, 'rakcesa', '2014-02-22 10:44:18', 21, 27, 'Trať 210', 'Ze stejného místa, zde je vidět budova "Hotelu Slunce".', '1393062258.jpg', 838, 837),
+(841, 'rakcesa', '2014-02-23 11:49:55', 48, 1, 'Krč - Na úlehli', 'Letecký pohled na nové sídliště z roku 1977. Díváme se ze severu. Zleva doprava čtvrť ohraničuje oblouk železniční trati (doleva k Vršovicím, vpravo ke Krči a dál do Braníka). V pravém horním rohu zatím ještě nestojí velké Depo Kačerov pro soupravy metra dopravního podniku. Ani ještě Spořilov, který je vidět nahoře, neodděluje Jižní spojka. Ta vyrostla až o pár let později.', '1393152595.jpg', 0, 845);
 INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, `name`, `dscr`, `image`, `prev`, `next`) VALUES
-(841, 'rakcesa', '2014-02-23 11:49:55', 48, 1, 'Krč - Na úlehli', 'Letecký pohled na nové sídliště z roku 1977. Díváme se ze severu. Zleva doprava čtvrť ohraničuje oblouk železniční trati (doleva k Vršovicím, vpravo ke Krči a dál do Braníka). V pravém horním rohu zatím ještě nestojí velké Depo Kačerov pro soupravy metra dopravního podniku. Ani ještě Spořilov, který je vidět nahoře, neodděluje Jižní spojka. Ta vyrostla až o pár let později.', '1393152595.jpg', 0, 845),
 (843, 'rakcesa', '2014-02-23 12:06:42', 48, 3, 'Krč - Na úlehli', 'Tato mapa zobrazuje stav v roce 1938, kdy zde ještě stály pouze vily. Vlevo dole je vidět konečná smyčka tramajové trati, která kdysi vedla z Budějovické na Kačerov.', '1393153602.jpg', 845, 0),
 (845, 'rakcesa', '2014-02-23 12:28:30', 48, 2, 'Krč - Na úlehli', 'Dnešní stav. Úhel pohledu je podobný tomu z prvního snímku, je tedy možné porovnat, co všechno se za 40 let změnilo a nebo naopak nezměnilo.', '1393154910.jpg', 841, 843),
 (846, 'rakcesa', '2014-03-13 14:30:14', 8, 20, 'Šimsovo sanatorium', '', '1394717414.jpg', 787, 608),
@@ -644,7 +644,7 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (882, 'rakcesa', '2014-03-18 13:56:21', 49, 2, 'Sokol Pankrac', '', '1395147381.jpg', 881, 885),
 (883, 'rakcesa', '2014-03-18 13:56:44', 49, 4, 'Sokol Pankrac', '', '1395147404.jpg', 885, 0),
 (885, 'rakcesa', '2014-03-18 13:57:28', 49, 3, 'Sokol Pankrac', 'Rok_1912', '1395147448.jpg', 882, 883),
-(887, 'rakcesa', '2014-03-21 10:03:49', 4, 3, 'Lékárna Krčská', 'Malá 10 cm vysoká lahvička (hliněná keramika)', '1395392629.jpg', 609, 1009),
+(887, 'rakcesa', '2014-03-21 10:03:49', 4, 3, 'Lékárna Krčská', 'Malá 10 cm vysoká lahvička (hliněná keramika)', '1395392629.jpg', 609, 0),
 (888, 'rakcesa', '2014-03-24 22:28:59', 13, 42, 'Zbouraná Krč', 'Klimš', '1395696539.jpg', 892, 889),
 (889, 'rakcesa', '2014-03-24 22:30:35', 13, 43, 'Zbouraná Krč', '', '1395696635.jpg', 888, 890),
 (890, 'rakcesa', '2014-03-24 22:31:17', 13, 44, 'Zbouraná Krč', '', '1395696677.jpg', 889, 891),
@@ -726,7 +726,7 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (984, 'rakcesa', '2014-09-05 14:08:31', 1, 38, 'krč', '', '1409918911.jpg', 1164, 580),
 (988, 'rakcesa', '2014-10-07 12:48:22', 68, 1, 'V Zámečku', '', '1412678902.jpg', 0, 0),
 (990, 'ellrohir', '2014-10-16 20:43:15', 1, 24, 'Krč', 'Sanatorium dr. Šimsy, celkový pohled a Welzův zámek', '1413484995.jpg', 25, 538),
-(991, 'ellrohir', '2014-10-16 20:48:31', 1, 48, 'Domov pro seniory', 'Domov pro seniory v ulici Sulická. Postaven 1963, pohlednice odeslána v roce 1968.', '1413485311.jpg', 493, 1345),
+(991, 'ellrohir', '2014-10-16 20:48:31', 1, 48, 'Domov pro seniory', 'Domov pro seniory v ulici Sulická. Postaven 1963, pohlednice odeslána v roce 1968.', '1413485311.jpg', 1347, 493),
 (992, 'ellrohir', '2014-10-16 20:57:01', 4, 1, 'Hudební škola Gustava Endršta', 'Třídní fotografie z Krčské školy vojenské hudby Gustava Endršta založené roku 1896. Ve starých mapách ji lze najít pod č. 310 (r. 1937) nebo pod č. 613 (r. 1948) v kopci v ulici Budějovická u dnešního Metra Kačerov. ', '1413485821.jpg', 0, 609),
 (993, 'rakcesa', '2014-10-19 12:26:26', 42, 5, 'Prodaná nevěsta', 'Dobový plakát zvoucí do Lesního divadla v Krči', '1413714386.jpg', 230, 449),
 (996, 'rakcesa', '2014-10-22 19:11:39', 62, 1, 'Michle', '', '1413997899.jpg', 0, 997),
@@ -741,7 +741,6 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (1006, 'rakcesa', '2014-10-22 19:19:06', 59, 5, 'Nusle', '', '1413998346.jpg', 1005, 1027),
 (1007, 'ellrohir', '2014-10-29 13:53:44', 26, 3, 'Vysvědčení', 'Vysvědčení z Dívčí zahradnické školy, ročník 1924.', '1414587224.jpg', 776, 1348),
 (1008, 'rakcesa', '2014-11-06 14:14:28', 23, 11, 'Etiketa Malvaz', 'Jedna z etiket Krčského pivovaru.', '1415279668.jpg', 1023, 1190),
-(1009, 'rakcesa', '2014-11-28 14:24:59', 4, 4, 'Odznak - Sparta Krč', 'Montáže Praha Sparta Krč', '1417181099.jpg', 887, 0),
 (1010, 'rakcesa', '2014-11-28 14:32:01', 69, 1, 'Sokol Nusle', 'Otevření Sokolovny v Nuslich 28.10.1925', '1417181521.jpg', 0, 1011),
 (1011, 'rakcesa', '2014-11-28 14:34:54', 69, 2, 'Sokol Nusle', '', '1417181694.jpg', 1010, 0),
 (1012, 'rakcesa', '2014-11-28 14:39:01', 70, 1, 'Sokol Pankrac', '', '1417181941.jpg', 0, 1013),
@@ -779,7 +778,7 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (1049, 'rakcesa', '2015-02-23 15:33:15', 76, 14, 'Kunratice', '', '1424701995.jpg', 1048, 1050),
 (1050, 'rakcesa', '2015-02-23 15:33:27', 76, 15, 'Kunratice', '', '1424702007.jpg', 1049, 1051),
 (1051, 'rakcesa', '2015-02-23 15:33:40', 76, 16, 'Kunratice', '', '1424702020.jpg', 1050, 1053),
-(1052, 'rakcesa', '2015-02-23 15:33:52', 76, 18, 'Kunratice', '', '1424702032.jpg', 1053, 0),
+(1052, 'rakcesa', '2015-02-23 15:33:52', 76, 18, 'Kunratice', '', '1424702032.jpg', 1053, 1364),
 (1053, 'rakcesa', '2015-02-23 15:38:30', 76, 17, 'Kunratice', '', '1424702310.jpg', 1051, 1052),
 (1054, 'rakcesa', '2015-02-23 16:19:24', 78, 1, 'Brožura', '', '1424704764.jpg', 0, 1055),
 (1055, 'rakcesa', '2015-02-23 16:19:41', 78, 2, 'Brožura', '', '1424704781.jpg', 1054, 1056),
@@ -959,7 +958,6 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (1236, 'rakcesa', '2015-07-09 15:03:14', 94, 2, 'Krčská vodárna', 'Technický výkres\r\n', '1436446994.jpg', 1235, 0),
 (1237, 'rakcesa', '2015-07-09 15:24:50', 6, 11, 'Masarykovy domovy  ', '', '1436448290.jpg', 635, 1238),
 (1238, 'rakcesa', '2015-07-09 15:25:15', 6, 12, 'Masarykovy domovy', '', '1436448315.jpg', 1237, 636),
-(1239, 'rakcesa', '2015-07-10 14:53:56', 1, 45, 'Krč', '', '1436532836.jpg', 796, 355),
 (1240, 'rakcesa', '2015-07-15 20:19:46', 85, 12, 'Doprava', 'Jihlavska (Foto: Archiv p.Immer)', '1436984386.jpg', 1249, 1153),
 (1241, 'rakcesa', '2015-07-15 20:20:14', 85, 22, 'Doprava', 'Asi Jihlavska(Foto: Archiv p.Immer)', '1436984414.jpg', 1253, 1254),
 (1242, 'rakcesa', '2015-07-15 20:20:32', 85, 8, 'Doprava', 'Jihlavska(Foto: Archiv p.Immer)', '1436984432.jpg', 1246, 1243),
@@ -997,14 +995,13 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (1275, 'rakcesa', '2015-07-25 15:45:11', 92, 2, 'Krč', 'Dům 159/11 v dnešní ulici Na Dvorcích u Ryšánky. (<a href="http://www.mapy.cz/s/kefv">MAPA</a>)', '1437831911.jpg', 1234, 1276),
 (1276, 'rakcesa', '2015-07-25 15:45:41', 92, 3, 'Krč', 'Dům 155/23 v dnešní ulici Nová cesta u Ryšánky. (<a href="http://www.mapy.cz/s/kefp">MAPA</a>)', '1437831941.jpg', 1275, 1277),
 (1277, 'rakcesa', '2015-07-25 15:57:19', 92, 4, 'Kaplička', 'Kaple sv. Anny (Dolnokrčská 1), jeden z posledních pozůstatků Dolní Krče po stavbě Jižní Spojky. (<a href="http://www.mapy.cz/s/kefl">MAPA</a>)', '1437832639.jpg', 1276, 1278),
-(1278, 'rakcesa', '2015-08-02 16:39:15', 92, 5, 'Trafostanice', 'Před stavbou Jižní Spojky a dnes - stanice stojí oblouku sjezdu do Budějovické a Michelské/Vídeňské (<a href="http://www.mapy.cz/s/keev">MAPA</a>)', '1438526355.jpg', 1277, 1279),
-(1279, 'rakcesa', '2015-08-02 17:36:43', 92, 6, 'Welzův zámek v Krči', 'Pohled od západu (<a href="http://www.mapy.cz/s/kefi">MAPA</a>)', '1438529803.jpg', 1278, 1280),
-(1280, 'rakcesa', '2015-08-02 17:51:25', 92, 7, 'Budova "Orient"', 'Nachází se v jižní části areálu Šimsova sanatoria při ohybu ulice Sulická (<a href="http://www.mapy.cz/s/kef9">MAPA</a>)', '1438530685.jpg', 1279, 1288),
+(1278, 'rakcesa', '2015-08-02 16:39:15', 92, 5, 'Trafostanice', 'Před stavbou Jižní Spojky a dnes - stanice stojí oblouku sjezdu do Budějovické a Michelské/Vídeňské (<a href="http://www.mapy.cz/s/keev">MAPA</a>)', '1438526355.jpg', 1277, 1280),
+(1280, 'rakcesa', '2015-08-02 17:51:25', 92, 6, 'Budova "Orient"', 'Nachází se v jižní části areálu Šimsova sanatoria při ohybu ulice Sulická (<a href="http://www.mapy.cz/s/kef9">MAPA</a>)', '1438530685.jpg', 1278, 1288),
 (1284, 'rakcesa', '2015-08-17 13:36:59', 95, 1, 'Krč u Protivína', '', '1439811419.jpg', 0, 1291),
 (1285, 'rakcesa', '2015-08-17 13:37:22', 95, 3, 'Krč u Protivína', '', '1439811442.jpg', 1291, 1292),
 (1286, 'rakcesa', '2015-08-17 13:37:54', 95, 5, 'Krč u Protivína', '', '1439811474.jpg', 1292, 1299),
-(1288, 'rakcesa', '2015-08-18 14:22:15', 92, 8, 'Pivovar', 'Někdejší pivovar Pragovar při pohledu od severovýchodu z nájezdu na Jižní Spojku. Starší fotka je z roku 1987, aktuální z roku 2015.', '1439900535.jpg', 1280, 1289),
-(1289, 'rakcesa', '2015-08-18 14:45:31', 92, 9, 'Budějovická ulice', 'Pohled nahoru do kopce, kterým vyjíždějí autobusy na Kačerov. Cca 1975 | 2014', '1439901931.jpg', 1288, 0),
+(1288, 'rakcesa', '2015-08-18 14:22:15', 92, 7, 'Pivovar', 'Někdejší pivovar Pragovar při pohledu od severovýchodu z nájezdu na Jižní Spojku. Starší fotka je z roku 1987, aktuální z roku 2015.', '1439900535.jpg', 1280, 1289),
+(1289, 'rakcesa', '2015-08-18 14:45:31', 92, 8, 'Budějovická ulice', 'Pohled nahoru do kopce, kterým vyjíždějí autobusy na Kačerov. Cca 1975 | 2014', '1439901931.jpg', 1288, 1367),
 (1291, 'rakcesa', '2015-09-05 16:25:53', 95, 2, 'Krč u Protivína', '', '1441463153.jpg', 1284, 1285),
 (1292, 'rakcesa', '2015-09-05 16:26:13', 95, 4, 'Krč u Protivína', '', '1441463173.jpg', 1285, 1286),
 (1294, 'rakcesa', '2015-10-05 13:12:51', 19, 8, 'Hotel Chateau St. Havel', '', '1444043571.jpg', 775, 1295),
@@ -1013,21 +1010,21 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (1297, 'rakcesa', '2015-10-05 13:14:17', 19, 11, 'Hotel Chateau St. Havel', '', '1444043657.jpg', 1296, 1298),
 (1298, 'rakcesa', '2015-10-05 13:14:43', 19, 12, 'Hotel Chateau St. Havel', '', '1444043683.jpg', 1297, 0),
 (1299, 'rakcesa', '2015-11-20 16:54:07', 95, 6, 'Krč u Protivína', 'Škola', '1448034847.jpg', 1286, 0),
-(1300, 'rakcesa', '2015-11-25 15:02:26', 8, 27, 'Rozkoš', '', '1448460146.jpg', 352, 791),
+(1300, 'rakcesa', '2015-11-25 15:02:26', 8, 26, 'Rozkoš', '', '1448460146.jpg', 352, 789),
 (1301, 'rakcesa', '2015-11-27 14:12:57', 23, 14, 'Fruta', '', '1448629977.jpg', 1189, 1302),
 (1302, 'rakcesa', '2015-11-27 14:19:07', 23, 15, 'Fruta - Víno 1', 'Etiketa z lahve od vína. Firma sídlila v areálu Krčského pivovaru (dnes ulice Víděňská u Jižní spojky)', '1448630347.jpg', 1301, 1303),
 (1303, 'rakcesa', '2015-11-27 14:19:27', 23, 16, 'Fruta - Víno 2', 'Etiketa z lahve od vína. Firma sídlila v areálu Krčského pivovaru (dnes ulice Víděňská u Jižní spojky)', '1448630367.jpg', 1302, 1304),
 (1304, 'rakcesa', '2015-11-27 14:19:44', 23, 17, 'Fruta - Víno 3', 'Etiketa z lahve od vína. Firma sídlila v areálu Krčského pivovaru (dnes ulice Víděňská u Jižní spojky)', '1448630384.jpg', 1303, 1305),
 (1305, 'rakcesa', '2015-11-27 14:20:08', 23, 18, 'Fruta', '', '1448630408.jpg', 1304, 1306),
-(1306, 'rakcesa', '2015-11-27 14:20:22', 23, 19, 'Fruta - Limonada', 'Dobová lahev od limonády "Ovocenka" vyráběná bývalou Frutou v Krči', '1448630422.jpg', 1305, 1307);
-INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, `name`, `dscr`, `image`, `prev`, `next`) VALUES
+(1306, 'rakcesa', '2015-11-27 14:20:22', 23, 19, 'Fruta - Limonada', 'Dobová lahev od limonády "Ovocenka" vyráběná bývalou Frutou v Krči', '1448630422.jpg', 1305, 1307),
 (1307, 'rakcesa', '2015-11-27 14:20:36', 23, 20, 'Fruta', '', '1448630436.jpg', 1306, 1308),
-(1308, 'rakcesa', '2015-11-27 14:20:48', 23, 21, 'Fruta', '', '1448630448.jpg', 1307, 0),
+(1308, 'rakcesa', '2015-11-27 14:20:48', 23, 21, 'Fruta', '', '1448630448.jpg', 1307, 1366),
 (1309, 'rakcesa', '2015-12-03 14:33:47', 17, 2, 'Kojenecký ústav', 'Budova čislo III.', '1449149627.jpg', 666, 667),
 (1310, 'ellrohir', '2016-01-08 18:00:00', 1, 31, 'Krč', 'A ještě jednou, zde jako kolorovaná fotografie.', '1452272056.jpg', 1312, 663),
 (1311, 'ellrohir', '2016-01-08 18:00:00', 8, 0, 'Šimsovo sanatorium', 'Pohled z jihu na hlavní průčelí budovy sanatoria.', '1452273000.jpg', 0, 593),
 (1312, 'ellrohir', '2016-01-08 19:45:00', 1, 30, 'Krč', 'Pro veliký úspěch v zeleném nádechu...', '1452278485.jpg', 482, 1310),
-(1314, 'ellrohir', '2016-01-23 18:15:28', 17, 5, 'Sanatorium', 'Pod sněhem (leden 2016)<br />Foto: Alois Sečkár', '1453569328.jpg', 680, 1315),
+(1314, 'ellrohir', '2016-01-23 18:15:28', 17, 5, 'Sanatorium', 'Pod sněhem (leden 2016)<br />Foto: Alois Sečkár', '1453569328.jpg', 680, 1315);
+INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, `name`, `dscr`, `image`, `prev`, `next`) VALUES
 (1315, 'ellrohir', '2016-01-23 18:16:14', 17, 6, 'Sanatorium', 'Pod sněhem (leden 2016)<br />Foto: Alois Sečkár', '1453569374.jpg', 1314, 1326),
 (1316, 'rakcesa', '2016-01-23 21:32:38', 85, 31, '43', 'Lisek_Foto: Archiv p.Immer', '1453581158.jpg', 1157, 1317),
 (1317, 'rakcesa', '2016-01-23 21:34:27', 85, 32, '44', 'Lisek Foto: Archiv p.Immer', '1453581267.jpg', 1316, 1318),
@@ -1049,13 +1046,26 @@ INSERT INTO `elrh_gallery_images` (`id`, `author`, `created`, `gallery`, `ord`, 
 (1339, 'rakcesa', '2016-01-25 23:04:57', 85, 41, 'Vlak', 'Vlak u Kačerova', '1453759497.jpg', 1338, 1343),
 (1343, 'rakcesa', '2016-01-25 23:11:27', 85, 42, 'Vlak', 'Vlak u Kačerova', '1453759887.jpg', 1339, 1344),
 (1344, 'rakcesa', '2016-01-25 23:12:34', 85, 43, 'Vlak', 'Vlak u Kačerova', '1453759954.jpg', 1343, 0),
-(1345, 'rakcesa', '2016-01-26 14:52:32', 1, 49, 'Krč', 'Krč', '1453816352.jpg', 991, 1346),
-(1346, 'rakcesa', '2016-01-26 14:53:40', 1, 50, 'Krč', 'Krč', '1453816420.jpg', 1345, 1347),
-(1347, 'rakcesa', '2016-01-26 14:54:37', 1, 51, 'Krč', 'Krč', '1453816477.jpg', 1346, 0),
+(1345, 'rakcesa', '2016-01-26 14:52:32', 1, 46, 'Krč', 'Krč', '1453816352.jpg', 1346, 1347),
+(1346, 'rakcesa', '2016-01-26 14:53:40', 1, 45, 'Krč', 'Krč', '1453816420.jpg', 796, 1345),
+(1347, 'rakcesa', '2016-01-26 14:54:37', 1, 47, 'Krč', 'Krč', '1453816477.jpg', 1345, 991),
 (1348, 'rakcesa', '2016-01-26 14:55:18', 26, 4, 'Krč', 'Krč', '1453816518.jpg', 1007, 0),
 (1355, 'rakcesa', '2016-01-26 15:08:59', 67, 1, 'Restavrace ,,Za Větrem', 'Restavrace ,,Za Větrem', '1453817339.jpg', 0, 1356),
 (1356, 'rakcesa', '2016-01-26 15:09:42', 67, 2, 'Restavrace ,,Za Větrem', 'Restavrace ,,Za Větrem', '1453817382.jpg', 1355, 1357),
-(1357, 'rakcesa', '2016-01-26 15:10:22', 67, 3, 'Restavrace ,,Za Větrem', 'Restavrace ,,Za Větrem', '1453817422.jpg', 1356, 0);
+(1357, 'rakcesa', '2016-01-26 15:10:22', 67, 3, 'Restavrace ,,Za Větrem', 'Restavrace ,,Za Větrem', '1453817422.jpg', 1356, 0),
+(1358, 'rakcesa', '2016-01-29 22:35:05', 96, 1, 'Odznak', 'SK Sparta Krč', '1454103305.jpg', 0, 1359),
+(1359, 'rakcesa', '2016-01-29 22:36:19', 96, 2, 'Odznak', 'Montaže Praha-Sparta Krč ', '1454103379.jpg', 1358, 1360),
+(1360, 'rakcesa', '2016-01-29 22:38:36', 96, 3, 'Pozvanka', 'TJ Montaže Praha', '1454103515.jpg', 1359, 1361),
+(1361, 'rakcesa', '2016-01-29 23:06:48', 96, 4, 'Fodbal', '', '1454105207.jpg', 1360, 1362),
+(1362, 'rakcesa', '2016-01-29 23:27:23', 96, 5, 'Odznak', '', '1454106443.jpg', 1361, 0),
+(1363, 'rakcesa', '2016-01-30 12:32:40', 24, 6, 'Hospoda', 'Hájovna', '1454153560.jpg', 630, 0),
+(1364, 'rakcesa', '2016-01-30 12:33:32', 76, 19, 'Kunratice', '', '1454153612.jpg', 1052, 0),
+(1366, 'rakcesa', '2016-02-06 13:33:38', 23, 22, 'Fruta', '', '1454762018.jpg', 1308, 0),
+(1367, 'rakcesa', '2016-02-19 11:27:57', 92, 9, 'Před Nádražím', 'Před Nádražím v roce 1977 a dnešní stav.', '1455877677.jpg', 1289, 1368),
+(1368, 'rakcesa', '2016-02-19 11:29:01', 92, 10, 'Před Nádražím', 'Před Nádražím v roce 1977 a dnešní stav.', '1455877741.jpg', 1367, 1369),
+(1369, 'rakcesa', '2016-02-19 11:29:50', 92, 11, 'Před Nádražím', 'Před Nádražím v roce 1977 a dnešní stav.', '1455877790.jpg', 1368, 1370),
+(1370, 'rakcesa', '2016-02-19 11:30:30', 92, 12, 'Před Nádražím', 'Před Nádražím v roce 1977 a dnešní stav.', '1455877830.jpg', 1369, 1371),
+(1371, 'rakcesa', '2016-02-19 11:31:03', 92, 13, 'Před Nádražím', 'Před Nádražím v roce 1977 a dnešní stav.', '1455877863.jpg', 1370, 0);
 
 -- --------------------------------------------------------
 
@@ -1243,7 +1253,7 @@ CREATE TABLE IF NOT EXISTS `elrh_texts` (
   `lang` varchar(2) COLLATE utf8_czech_ci NOT NULL,
   `var` varchar(50) COLLATE utf8_czech_ci NOT NULL,
   `value` text COLLATE utf8_czech_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 --
 -- Dumping data for table `elrh_texts`
@@ -1438,7 +1448,10 @@ INSERT INTO `elrh_texts` (`id`, `lang`, `var`, `value`) VALUES
 (190, 'cz', 'admin_move_forwards_success', '<div class="admin_ok">Obrázek byl posunut vpřed</div>'),
 (191, 'cz', 'admin_move_backwards_success', '<div class="admin_ok">Obrázek byl posunut vzad</div>'),
 (192, 'cz', 'admin_move_forwards_fail', '<div class="admin_error">Nepodařilo se posunut obrázek vpřed (chyba galerie)</div>'),
-(193, 'cz', 'admin_move_backwards_fail', '<div class="admin_error">Nepodařilo se posunut obrázek vzad (chyba galerie)</div>');
+(193, 'cz', 'admin_move_backwards_fail', '<div class="admin_error">Nepodařilo se posunut obrázek vzad (chyba galerie)</div>'),
+(194, 'cz', 'gallery_edit', 'Upravit'),
+(195, 'cz', 'gallery_move_backwards', 'Posunout v galerii vzad'),
+(196, 'cz', 'gallery_move_forwards', 'Posunout v galerii vpřed');
 
 -- --------------------------------------------------------
 
@@ -1459,8 +1472,8 @@ CREATE TABLE IF NOT EXISTS `elrh_users` (
 --
 
 INSERT INTO `elrh_users` (`u_name`, `u_pass`, `u_mail`, `u_web`, `u_displayed_name`) VALUES
-('ellrohir', 'not shown public', 'seckar@svobodni.cz', 'http://alois-seckar.cz', 'Alois Sečkár'),
-('rakcesa', 'not shown public', 'rakcesa@seznam.cz', 'http://krc-historie.cz', 'Anton Sečkár');
+('ellrohir', 'make your own SHA-512 password', 'seckar@svobodni.cz', 'http://alois-seckar.cz', 'Alois Sečkár'),
+('rakcesa', 'make your own SHA-512 password', 'rakcesa@seznam.cz', 'http://krc-historie.cz', 'Anton Sečkár');
 
 --
 -- Indexes for dumped tables
@@ -1578,12 +1591,12 @@ ALTER TABLE `elrh_comments`
 -- AUTO_INCREMENT for table `elrh_gallery_galleries`
 --
 ALTER TABLE `elrh_gallery_galleries`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=96;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=97;
 --
 -- AUTO_INCREMENT for table `elrh_gallery_images`
 --
 ALTER TABLE `elrh_gallery_images`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1358;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1372;
 --
 -- AUTO_INCREMENT for table `elrh_links`
 --
@@ -1608,7 +1621,7 @@ ALTER TABLE `elrh_news`
 -- AUTO_INCREMENT for table `elrh_texts`
 --
 ALTER TABLE `elrh_texts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=194;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=197;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

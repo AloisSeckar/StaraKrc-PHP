@@ -17,7 +17,14 @@ class ELRHPageContentRenderer {
 			// there is request for displaying particular image
 			if ($page_data["exists"]==true) {
 				// image found
-				echo '<h1>'.$page_data["entry"]["name"].'</h1>'.PHP_EOL;
+				// image title
+				echo '<h1>';
+					echo $page_data["entry"]["name"];
+					// admin options
+					if (isset($_SESSION["user"])) {
+						echo ' <a href="/admin/select_image/'.$page_data["entry"]["iid"].'"><img src="/images/edit.png" title="'.$page_data["texts"]["gallery_edit"].'" alt="'.$page_data["texts"]["gallery_edit"].'" height="24" /></a>';
+					}
+				echo '</h1>'.PHP_EOL;
 				// some meta-info
 				echo '<p>'.PHP_EOL;
 					echo '<strong>'.$page_data["texts"]["gallery_author"].': '.$page_data["entry"]["author_name"].'</strong>'.PHP_EOL;
@@ -41,7 +48,9 @@ class ELRHPageContentRenderer {
 					$lang["prev"] = $page_data["texts"]["global_image_prev"];
 					$lang["gallery"] = $page_data["texts"]["global_image_gallery"];
 					$lang["next"] = $page_data["texts"]["global_image_next"];
-				$navbox = ELRHNavigationCreator::createImageNavbox($page_data["entry"]["prev"], $page_data["entry"]["next"], $page_data["parent"]["id"], $lang);
+					$lang["move_backwards"] = $page_data["texts"]["gallery_move_backwards"];
+					$lang["move_forwards"] = $page_data["texts"]["gallery_move_forwards"];
+				$navbox = ELRHNavigationCreator::createImageNavbox($page_data["entry"]["iid"], $page_data["entry"]["prev"], $page_data["entry"]["next"], $page_data["parent"]["id"], $lang);
 				// image and nagivation
 				echo '<table>'.PHP_EOL;
 				    // top navbox
@@ -74,7 +83,14 @@ class ELRHPageContentRenderer {
 			// there is request for displaying particular gallery
 			if ($page_data["exists"]==true) {
 				// gallery found
-				echo '<h1>'.$page_data["entry"]["name"].'</h1>'.PHP_EOL;
+				// gallery title
+				echo '<h1>';
+					echo $page_data["entry"]["name"];
+					// admin options
+					if (isset($_SESSION["user"])) {
+						echo ' <a href="/admin/select_gallery/'.$page_data["entry"]["gid"].'"><img src="/images/edit.png" title="'.$page_data["texts"]["gallery_edit"].'" alt="'.$page_data["texts"]["gallery_edit"].'" height="24" /></a>';
+					}
+				echo '</h1>'.PHP_EOL;
 				// some meta-info
 				echo '<p>'.PHP_EOL;
 					echo '<strong>'.$page_data["texts"]["gallery_author"].': '.$page_data["entry"]["author_name"].'</strong>'.PHP_EOL;
@@ -162,7 +178,14 @@ class ELRHPageContentRenderer {
 			// list of galleries
 			if (!empty($page_data["galleries"])) {
 				foreach ($page_data["galleries"] as $row) {
-					echo '<h2>'.$row["name"].'</h2>'.PHP_EOL;
+					// gallery title
+					echo '<h2>';
+						echo $row["name"];
+						// admin options
+						if (isset($_SESSION["user"])) {
+							echo ' <a href="/admin/select_gallery/'.$row["id"].'"><img src="/images/edit.png" title="'.$page_data["texts"]["gallery_edit"].'" alt="'.$page_data["texts"]["gallery_edit"].'" height="16" /></a>';
+						}
+					echo '</h2>'.PHP_EOL;
 					// description (shorten to 200 letters if needed)
 					include_once getcwd().'/scripts/content-helpers/elrh_output_handler.php';
 					echo '<p><em>'.ELRHOutputHandler::shortenText($row["dscr"], 250, '/gallery/g/'.$row["id"], $page_data["texts"]["gallery_more"]).'</em></p>'.PHP_EOL;
