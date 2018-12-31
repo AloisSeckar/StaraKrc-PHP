@@ -89,7 +89,7 @@ class ELRHImageFormRenderer {
 					echo '<td class="value">'.PHP_EOL;
 						if (!$current_image["exists"]) {
 							include_once getcwd().'/scripts/admin-helpers/admin-forms/elrh_forms_gallery.php';
-							echo ELRHGalleryFormRenderer::renderGalleriesSelect("gallery", $galleries, false, $current_image["gallery"]).PHP_EOL;
+							echo ELRHGalleryFormRenderer::renderGalleriesSelect("gallery", $galleries, false, $current_gallery["id"]).PHP_EOL;
 						} else {
 							echo '<a href="/gallery/g/'.$current_gallery["id"].'">'.$current_gallery["name"].'</a>'.PHP_EOL;
 						}
